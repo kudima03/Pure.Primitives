@@ -1,8 +1,8 @@
-﻿using Pure.Primitives.UShort;
+﻿using Pure.Primitives.Number;
 
-namespace Pure.Primitives.Tests.UShort;
+namespace Pure.Primitives.Tests.Number;
 
-using UShort = Primitives.UShort.UShort;
+using UShort = UShort;
 
 public sealed record UShortTests
 {
