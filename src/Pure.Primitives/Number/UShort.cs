@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Pure.Primitives.UShort;
+namespace Pure.Primitives.Number;
 
 public sealed record UShort : IUShort
 {

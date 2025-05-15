@@ -1,4 +1,4 @@
-﻿namespace Pure.Primitives.UShort;
+﻿namespace Pure.Primitives.Number;
 
 public interface IUShort
 {
