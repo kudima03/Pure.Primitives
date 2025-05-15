@@ -1,5 +1,4 @@
-﻿using Pure.Primitives.String;
-using Pure.Primitives.UShort;
+﻿using Pure.Primitives.UShort;
 
 namespace Pure.Primitives.Tests.UShort;
 
