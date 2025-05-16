@@ -6,7 +6,7 @@ public sealed record Guid : IGuid
 {
     private readonly System.Guid _value;
 
-    public Guid() : this(new System.Guid()) { }
+    public Guid() : this(System.Guid.NewGuid()) { }
 
     public Guid(System.Guid value)
     {
