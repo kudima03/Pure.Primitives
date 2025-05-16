@@ -9,7 +9,7 @@ public sealed record GuidTests
     [Fact]
     public void InitializeFromScalarConstructor()
     {
-        System.Guid testValue = new System.Guid();
+        System.Guid testValue = System.Guid.NewGuid();
         IGuid guidPrimitive = new Guid(testValue);
         Assert.Equal(testValue, guidPrimitive.Value);
     }
