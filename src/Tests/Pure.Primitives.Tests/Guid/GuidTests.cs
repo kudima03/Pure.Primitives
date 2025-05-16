@@ -22,6 +22,13 @@ public sealed record GuidTests
     }
 
     [Fact]
+    public void InitializeFromEmptyConstructorWithNotEmptyGuid()
+    {
+        IGuid guidPrimitive = new Guid();
+        Assert.NotEqual(System.Guid.Empty, guidPrimitive.Value);
+    }
+
+    [Fact]
     public void ThrowExceptionOnGetHashCode()
     {
         Assert.Throws<NotSupportedException>(() => new Guid().GetHashCode());
