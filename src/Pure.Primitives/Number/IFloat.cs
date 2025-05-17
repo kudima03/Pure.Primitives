@@ -1,6 +1,5 @@
-﻿namespace Pure.Primitives.Number;
+﻿using Pure.Primitives.Number.Base;
 
-public interface IFloat
-{
-    internal float Value { get; }
-}
+namespace Pure.Primitives.Number;
+
+public interface IFloat : INumber<float> { }

@@ -2,8 +2,6 @@
 
 namespace Pure.Primitives.Tests.Number;
 
-using UShort = UShort;
-
 public sealed record UShortTests
 {
     [Fact]

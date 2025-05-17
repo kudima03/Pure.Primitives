@@ -1,4 +1,5 @@
 ﻿using Pure.Primitives.Bool;
+using Pure.Primitives.Number.Base;
 using System;
 
 namespace Pure.Primitives.Number;
@@ -18,7 +19,7 @@ public sealed record LongChoice : ILong
         _valueOnFalse = valueOnFalse;
     }
 
-    long ILong.Value => _condition.Value ? _valueOnTrue.Value : _valueOnFalse.Value;
+    long INumber<long>.Value => _condition.Value ? _valueOnTrue.Value : _valueOnFalse.Value;
 
     public override int GetHashCode()
     {
