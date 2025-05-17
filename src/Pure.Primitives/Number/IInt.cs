@@ -1,6 +1,5 @@
-﻿namespace Pure.Primitives.Number;
+﻿using Pure.Primitives.Number.Base;
 
-public interface IInt
-{
-    internal int Value { get; }
-}
+namespace Pure.Primitives.Number;
+
+public interface IInt : INumber<int> { }

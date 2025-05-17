@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pure.Primitives.Number.Base;
+using System;
 
 namespace Pure.Primitives.Number;
 
@@ -11,7 +12,7 @@ public sealed record Float : IFloat
         _value = value;
     }
 
-    float IFloat.Value => _value;
+    float INumber<float>.Value => _value;
 
     public override int GetHashCode()
     {

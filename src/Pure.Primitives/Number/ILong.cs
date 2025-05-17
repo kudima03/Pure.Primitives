@@ -1,6 +1,5 @@
-﻿namespace Pure.Primitives.Number;
+﻿using Pure.Primitives.Number.Base;
 
-public interface ILong
-{
-    internal long Value { get; }
-}
+namespace Pure.Primitives.Number;
+
+public interface ILong : INumber<long> { }

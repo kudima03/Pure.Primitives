@@ -1,6 +1,5 @@
-﻿namespace Pure.Primitives.Number;
+﻿using Pure.Primitives.Number.Base;
 
-public interface IUShort
-{
-    internal ushort Value { get; }
-}
+namespace Pure.Primitives.Number;
+
+public interface IUShort : INumber<ushort> { }
