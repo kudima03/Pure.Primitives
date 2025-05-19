@@ -3,7 +3,7 @@ using System;
 
 namespace Pure.Primitives.Number;
 
-public sealed record UInt : IUInt
+public sealed record UInt : INumber<uint>
 {
     private readonly uint _value;
 

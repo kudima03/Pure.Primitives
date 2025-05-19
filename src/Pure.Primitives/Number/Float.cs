@@ -3,7 +3,7 @@ using System;
 
 namespace Pure.Primitives.Number;
 
-public sealed record Float : IFloat
+public sealed record Float : INumber<float>
 {
     private readonly float _value;
 

@@ -1,4 +1,5 @@
 ﻿using Pure.Primitives.Number;
+using Pure.Primitives.Number.Base;
 
 namespace Pure.Primitives.Tests.Number;
 
@@ -8,7 +9,7 @@ public sealed record UShortTests
     public void InitializeFromScalarConstructor()
     {
         const ushort testValue = 11324;
-        IUShort ushortPrimitive = new UShort(testValue);
+        INumber<ushort> ushortPrimitive = new UShort(testValue);
         Assert.Equal(testValue, ushortPrimitive.Value);
     }
 

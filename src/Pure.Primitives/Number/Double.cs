@@ -3,7 +3,7 @@ using System;
 
 namespace Pure.Primitives.Number;
 
-public sealed record Double : IDouble
+public sealed record Double : INumber<double>
 {
     private readonly double _value;
 

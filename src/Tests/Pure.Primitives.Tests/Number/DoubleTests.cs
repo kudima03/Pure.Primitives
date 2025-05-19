@@ -1,4 +1,4 @@
-﻿using Pure.Primitives.Number;
+﻿using Pure.Primitives.Number.Base;
 
 namespace Pure.Primitives.Tests.Number;
 
@@ -10,7 +10,7 @@ public sealed record DoubleTests
     public void InitializeFromScalarConstructor()
     {
         const double testValue = 1.12837491280374129387591229837529183759012;
-        IDouble doublePrimitive = new Double(testValue);
+        INumber<double> doublePrimitive = new Double(testValue);
         Assert.Equal(testValue, doublePrimitive.Value);
     }
 

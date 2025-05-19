@@ -1,11 +1,12 @@
 ﻿using Pure.Primitives.Number;
+using Pure.Primitives.Number.Base;
 using System;
 
 namespace Pure.Primitives.DayOfWeek;
 
 public sealed record Saturday : IDayOfWeek
 {
-    IInt IDayOfWeek.DayNumber => new Int(6);
+    INumber<int> IDayOfWeek.DayNumber => new Int(6);
 
     public override int GetHashCode()
     {

@@ -1,4 +1,5 @@
 ﻿using Pure.Primitives.Number;
+using Pure.Primitives.Number.Base;
 
 namespace Pure.Primitives.Tests.Number;
 
@@ -8,7 +9,7 @@ public sealed record UIntTests
     public void InitializeFromScalarConstructor()
     {
         const uint testValue = 3910283761;
-        IUInt uintPrimitive = new UInt(testValue);
+        INumber<uint> uintPrimitive = new UInt(testValue);
         Assert.Equal(testValue, uintPrimitive.Value);
     }
 

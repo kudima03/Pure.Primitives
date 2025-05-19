@@ -1,5 +1,5 @@
 ﻿using Pure.Primitives.Number;
-using Double = Pure.Primitives.Number.Double;
+using Pure.Primitives.Number.Base;
 
 namespace Pure.Primitives.Tests.Number;
 
@@ -9,7 +9,7 @@ public sealed record FloatTests
     public void InitializeFromScalarConstructor()
     {
         const float testValue = 1.12837491280374129387837529183759012F;
-        IFloat doublePrimitive = new Float(testValue);
+        INumber<float> doublePrimitive = new Float(testValue);
         Assert.Equal(testValue, doublePrimitive.Value);
     }
 
