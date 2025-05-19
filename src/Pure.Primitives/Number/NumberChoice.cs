@@ -4,22 +4,22 @@ using System;
 
 namespace Pure.Primitives.Number;
 
-public sealed record FloatChoice : INumber<float>
+public sealed record NumberChoice<T> : INumber<T> where T : System.Numerics.INumber<T>
 {
     private readonly IBool _condition;
 
-    private readonly INumber<float> _valueOnTrue;
+    private readonly INumber<T> _valueOnTrue;
 
-    private readonly INumber<float> _valueOnFalse;
+    private readonly INumber<T> _valueOnFalse;
 
-    public FloatChoice(IBool condition, INumber<float> valueOnTrue, INumber<float> valueOnFalse)
+    public NumberChoice(IBool condition, INumber<T> valueOnTrue, INumber<T> valueOnFalse)
     {
         _condition = condition;
         _valueOnTrue = valueOnTrue;
         _valueOnFalse = valueOnFalse;
     }
 
-    float INumber<float>.Value => _condition.Value ? _valueOnTrue.Value : _valueOnFalse.Value;
+    T INumber<T>.Value => _condition.Value ? _valueOnTrue.Value : _valueOnFalse.Value;
 
     public override int GetHashCode()
     {
