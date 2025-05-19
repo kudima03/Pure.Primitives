@@ -1,4 +1,5 @@
 ﻿using Pure.Primitives.Number;
+using Pure.Primitives.Number.Base;
 
 namespace Pure.Primitives.Tests.Number;
 
@@ -8,7 +9,7 @@ public sealed record IntTests
     public void InitializeFromScalarConstructor()
     {
         const int testValue = 1910283761;
-        IInt doublePrimitive = new Int(testValue);
+        INumber<int> doublePrimitive = new Int(testValue);
         Assert.Equal(testValue, doublePrimitive.Value);
     }
 

@@ -4,15 +4,15 @@ using System;
 
 namespace Pure.Primitives.Number;
 
-public sealed record UShortChoice : IUShort
+public sealed record UShortChoice : INumber<ushort>
 {
     private readonly IBool _condition;
 
-    private readonly IUShort _valueOnTrue;
+    private readonly INumber<ushort> _valueOnTrue;
 
-    private readonly IUShort _valueOnFalse;
+    private readonly INumber<ushort> _valueOnFalse;
 
-    public UShortChoice(IBool condition, IUShort valueOnTrue, IUShort valueOnFalse)
+    public UShortChoice(IBool condition, INumber<ushort> valueOnTrue, INumber<ushort> valueOnFalse)
     {
         _condition = condition;
         _valueOnTrue = valueOnTrue;

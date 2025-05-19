@@ -4,15 +4,15 @@ using System;
 
 namespace Pure.Primitives.Number;
 
-public sealed record LongChoice : ILong
+public sealed record LongChoice : INumber<long>
 {
     private readonly IBool _condition;
 
-    private readonly ILong _valueOnTrue;
+    private readonly INumber<long> _valueOnTrue;
 
-    private readonly ILong _valueOnFalse;
+    private readonly INumber<long> _valueOnFalse;
 
-    public LongChoice(IBool condition, ILong valueOnTrue, ILong valueOnFalse)
+    public LongChoice(IBool condition, INumber<long> valueOnTrue, INumber<long> valueOnFalse)
     {
         _condition = condition;
         _valueOnTrue = valueOnTrue;

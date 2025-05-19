@@ -1,8 +1,8 @@
-﻿using Pure.Primitives.Number;
+﻿using Pure.Primitives.Number.Base;
 
 namespace Pure.Primitives.DayOfWeek;
 
 public interface IDayOfWeek
 {
-    internal IInt DayNumber { get; }
+    internal INumber<int> DayNumber { get; }
 }

@@ -1,5 +1,6 @@
 ﻿using Pure.Primitives.Bool;
 using Pure.Primitives.Number;
+using Pure.Primitives.Number.Base;
 
 namespace Pure.Primitives.Tests.Number;
 
@@ -8,18 +9,18 @@ public sealed record UIntChoiceTests
     [Fact]
     public void CorrectChooseOnTrueCondition()
     {
-        IUInt valueOnTrue = new UInt(1);
-        IUInt valueOnFalse = new UInt(0);
-        IUInt choice = new UIntChoice(new True(), valueOnTrue, valueOnFalse);
+        INumber<uint> valueOnTrue = new UInt(1);
+        INumber<uint> valueOnFalse = new UInt(0);
+        INumber<uint> choice = new UIntChoice(new True(), valueOnTrue, valueOnFalse);
         Assert.Equal(valueOnTrue.Value, choice.Value);
     }
 
     [Fact]
     public void CorrectChooseOnFalseCondition()
     {
-        IUInt valueOnTrue = new UInt(1);
-        IUInt valueOnFalse = new UInt(0);
-        IUInt choice = new UIntChoice(new False(), valueOnTrue, valueOnFalse);
+        INumber<uint> valueOnTrue = new UInt(1);
+        INumber<uint> valueOnFalse = new UInt(0);
+        INumber<uint> choice = new UIntChoice(new False(), valueOnTrue, valueOnFalse);
         Assert.Equal(valueOnFalse.Value, choice.Value);
     }
 

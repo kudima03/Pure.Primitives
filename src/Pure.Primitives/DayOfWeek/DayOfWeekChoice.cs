@@ -1,5 +1,5 @@
 ﻿using Pure.Primitives.Bool;
-using Pure.Primitives.Number;
+using Pure.Primitives.Number.Base;
 using System;
 
 namespace Pure.Primitives.DayOfWeek;
@@ -19,7 +19,7 @@ public sealed record DayOfWeekChoice : IDayOfWeek
         _valueOnFalse = valueOnFalse;
     }
 
-    IInt IDayOfWeek.DayNumber => _condition.Value ? _valueOnTrue.DayNumber : _valueOnFalse.DayNumber;
+    INumber<int> IDayOfWeek.DayNumber => _condition.Value ? _valueOnTrue.DayNumber : _valueOnFalse.DayNumber;
 
     public override int GetHashCode()
     {

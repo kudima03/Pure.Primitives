@@ -4,15 +4,15 @@ using System;
 
 namespace Pure.Primitives.Number;
 
-public sealed record FloatChoice : IFloat
+public sealed record FloatChoice : INumber<float>
 {
     private readonly IBool _condition;
 
-    private readonly IFloat _valueOnTrue;
+    private readonly INumber<float> _valueOnTrue;
 
-    private readonly IFloat _valueOnFalse;
+    private readonly INumber<float> _valueOnFalse;
 
-    public FloatChoice(IBool condition, IFloat valueOnTrue, IFloat valueOnFalse)
+    public FloatChoice(IBool condition, INumber<float> valueOnTrue, INumber<float> valueOnFalse)
     {
         _condition = condition;
         _valueOnTrue = valueOnTrue;

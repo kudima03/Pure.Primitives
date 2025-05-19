@@ -4,15 +4,15 @@ using System;
 
 namespace Pure.Primitives.Number;
 
-public sealed record DoubleChoice : IDouble
+public sealed record DoubleChoice : INumber<double>
 {
     private readonly IBool _condition;
 
-    private readonly IDouble _valueOnTrue;
+    private readonly INumber<double> _valueOnTrue;
 
-    private readonly IDouble _valueOnFalse;
+    private readonly INumber<double> _valueOnFalse;
 
-    public DoubleChoice(IBool condition, IDouble valueOnTrue, IDouble valueOnFalse)
+    public DoubleChoice(IBool condition, INumber<double> valueOnTrue, INumber<double> valueOnFalse)
     {
         _condition = condition;
         _valueOnTrue = valueOnTrue;

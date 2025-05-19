@@ -1,5 +1,6 @@
 ﻿using Pure.Primitives.Bool;
 using Pure.Primitives.Number;
+using Pure.Primitives.Number.Base;
 
 namespace Pure.Primitives.Tests.Number;
 
@@ -8,18 +9,18 @@ public sealed record FloatChoiceTests
     [Fact]
     public void CorrectChooseOnTrueCondition()
     {
-        IFloat valueOnTrue = new Float(1.03F);
-        IFloat valueOnFalse = new Float(1.04F);
-        IFloat choice = new FloatChoice(new True(), valueOnTrue, valueOnFalse);
+        INumber<float> valueOnTrue = new Float(1.03F);
+        INumber<float> valueOnFalse = new Float(1.04F);
+        INumber<float> choice = new FloatChoice(new True(), valueOnTrue, valueOnFalse);
         Assert.Equal(valueOnTrue.Value, choice.Value);
     }
 
     [Fact]
     public void CorrectChooseOnFalseCondition()
     {
-        IFloat valueOnTrue = new Float(1.03F);
-        IFloat valueOnFalse = new Float(1.04F);
-        IFloat choice = new FloatChoice(new False(), valueOnTrue, valueOnFalse);
+        INumber<float> valueOnTrue = new Float(1.03F);
+        INumber<float> valueOnFalse = new Float(1.04F);
+        INumber<float> choice = new FloatChoice(new False(), valueOnTrue, valueOnFalse);
         Assert.Equal(valueOnFalse.Value, choice.Value);
     }
 

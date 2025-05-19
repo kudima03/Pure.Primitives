@@ -3,7 +3,7 @@ using System;
 
 namespace Pure.Primitives.Number;
 
-public sealed record UShort : IUShort
+public sealed record UShort : INumber<ushort>
 {
     private readonly ushort _value;
 

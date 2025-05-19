@@ -3,7 +3,7 @@ using System;
 
 namespace Pure.Primitives.Number;
 
-public sealed record Long : ILong
+public sealed record Long : INumber<long>
 {
     private readonly long _value;
 

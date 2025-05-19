@@ -1,5 +1,6 @@
 ﻿using Pure.Primitives.Bool;
 using Pure.Primitives.Number;
+using Pure.Primitives.Number.Base;
 
 namespace Pure.Primitives.Tests.Number;
 
@@ -8,18 +9,18 @@ public sealed record LongChoiceTests
     [Fact]
     public void CorrectChooseOnTrueCondition()
     {
-        ILong valueOnTrue = new Long(1);
-        ILong valueOnFalse = new Long(0);
-        ILong choice = new LongChoice(new True(), valueOnTrue, valueOnFalse);
+        INumber<long> valueOnTrue = new Long(1);
+        INumber<long> valueOnFalse = new Long(0);
+        INumber<long> choice = new LongChoice(new True(), valueOnTrue, valueOnFalse);
         Assert.Equal(valueOnTrue.Value, choice.Value);
     }
 
     [Fact]
     public void CorrectChooseOnFalseCondition()
     {
-        ILong valueOnTrue = new Long(1);
-        ILong valueOnFalse = new Long(0);
-        ILong choice = new LongChoice(new False(), valueOnTrue, valueOnFalse);
+        INumber<long> valueOnTrue = new Long(1);
+        INumber<long> valueOnFalse = new Long(0);
+        INumber<long> choice = new LongChoice(new False(), valueOnTrue, valueOnFalse);
         Assert.Equal(valueOnFalse.Value, choice.Value);
     }
 
