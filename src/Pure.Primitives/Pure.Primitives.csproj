@@ -8,4 +8,8 @@
   <ItemGroup>
     <InternalsVisibleTo Include="Pure.Primitives.Tests" />
   </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Pure.Primitives.Abstractions" Version="0.1.1" />
+  </ItemGroup>
 </Project>

@@ -1,4 +1,4 @@
-﻿using Pure.Primitives.Number.Base;
+﻿using Pure.Primitives.Abstractions.Number;
 
 namespace Pure.Primitives.Tests.Number;
 
