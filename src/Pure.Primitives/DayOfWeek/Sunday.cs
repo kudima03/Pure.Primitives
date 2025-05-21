@@ -1,4 +1,5 @@
-﻿using Pure.Primitives.Abstractions.Number;
+﻿using Pure.Primitives.Abstractions.DayOfWeek;
+using Pure.Primitives.Abstractions.Number;
 using Pure.Primitives.Number;
 using System;
 
