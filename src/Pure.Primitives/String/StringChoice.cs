@@ -1,4 +1,5 @@
-﻿using Pure.Primitives.Abstractions.String;
+﻿using Pure.Primitives.Abstractions.Bool;
+using Pure.Primitives.Abstractions.String;
 using Pure.Primitives.Bool;
 using System;
 
