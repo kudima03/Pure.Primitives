@@ -1,6 +1,6 @@
-﻿using Pure.Primitives.Bool;
+﻿using Pure.Primitives.Abstractions.Number;
+using Pure.Primitives.Bool;
 using Pure.Primitives.Number;
-using Pure.Primitives.Number.Base;
 
 namespace Pure.Primitives.Tests.Number;
 

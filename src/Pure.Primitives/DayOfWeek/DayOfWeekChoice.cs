@@ -1,5 +1,5 @@
-﻿using Pure.Primitives.Bool;
-using Pure.Primitives.Number.Base;
+﻿using Pure.Primitives.Abstractions.Number;
+using Pure.Primitives.Bool;
 using System;
 
 namespace Pure.Primitives.DayOfWeek;
