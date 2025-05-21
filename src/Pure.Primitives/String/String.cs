@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pure.Primitives.Abstractions.String;
+using System;
 
 namespace Pure.Primitives.String;
 
