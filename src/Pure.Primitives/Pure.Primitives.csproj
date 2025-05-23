@@ -12,4 +12,15 @@
   <ItemGroup>
     <PackageReference Include="Pure.Primitives.Abstractions" Version="0.1.2" />
   </ItemGroup>
+
+  <PropertyGroup>
+    <PackageId>Pure.Primitives</PackageId>
+    <RootNamespace>Pure.Primitives</RootNamespace>
+    <AssemblyName>Pure.Primitives</AssemblyName>
+    <Version>0.1.0</Version>
+    <Authors>Dmitry Kurochkin</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/kudima03/Pure.Primitives</PackageProjectUrl>
+  </PropertyGroup>
+
 </Project>
