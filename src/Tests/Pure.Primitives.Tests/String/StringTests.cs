@@ -16,7 +16,7 @@ public sealed record StringTests
         IString stringPrimitive = new String(testValue);
         Assert.Equal(testValue, stringPrimitive.Value);
     }
-    
+
     [Fact]
     public void EnumeratesAsTyped()
     {
