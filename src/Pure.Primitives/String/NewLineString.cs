@@ -1,11 +1,22 @@
-﻿using Pure.Primitives.Abstractions.String;
+﻿using Pure.Primitives.Abstractions.Char;
+using Pure.Primitives.Abstractions.String;
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Pure.Primitives.String;
 
 public sealed record NewLineString : IString
 {
-    string IString.Value => Environment.NewLine;
+    private readonly string _value = Environment.NewLine;
+
+    string IString.Value => _value;
+
+    public IEnumerator<IChar> GetEnumerator()
+    {
+        return _value.Select(symbol => new Char.Char(symbol)).GetEnumerator();
+    }
 
     public override int GetHashCode()
     {
@@ -15,5 +26,10 @@ public sealed record NewLineString : IString
     public override string ToString()
     {
         throw new NotSupportedException();
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
     }
 }
