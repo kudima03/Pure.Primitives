@@ -9,7 +9,7 @@ public sealed record MinLongTests
     public void InitializeAsMinLong()
     {
         INumber<long> primitive = new MinLong();
-        Assert.Equal(long.MaxValue, primitive.Value);
+        Assert.Equal(long.MinValue, primitive.Value);
     }
 
     [Fact]
