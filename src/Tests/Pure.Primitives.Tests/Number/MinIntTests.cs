@@ -6,7 +6,7 @@ namespace Pure.Primitives.Tests.Number;
 public sealed record MinIntTests
 {
     [Fact]
-    public void InitializeAsMaxInt()
+    public void InitializeAsMinInt()
     {
         INumber<int> primitive = new MinInt();
         Assert.Equal(int.MinValue, primitive.Value);
