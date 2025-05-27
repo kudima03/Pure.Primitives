@@ -3,8 +3,8 @@ using Pure.Primitives.Number;
 
 namespace Pure.Primitives.Tests.DateTime;
 
-using DateTime = Primitives.DateTime.DateTime;
 using Date = Primitives.Date.Date;
+using DateTime = Primitives.DateTime.DateTime;
 using Time = Primitives.Time.Time;
 
 public sealed record DateTimeTests
