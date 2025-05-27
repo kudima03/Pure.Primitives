@@ -1,6 +1,5 @@
 ﻿using Pure.Primitives.Abstractions.Char;
 using Pure.Primitives.Abstractions.String;
-using Pure.Primitives.String;
 using System.Collections;
 
 namespace Pure.Primitives.Tests.String;
