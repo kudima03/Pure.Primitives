@@ -12,7 +12,7 @@ public sealed record Char : IChar
         _value = value;
     }
 
-    char IChar.Value => _value;
+    char IChar.CharValue => _value;
 
     public override int GetHashCode()
     {

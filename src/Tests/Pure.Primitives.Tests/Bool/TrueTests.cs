@@ -9,7 +9,7 @@ public sealed record TrueTests
     public void InitializeFromDefaultConstructor()
     {
         IBool trueValue = new True();
-        Assert.True(trueValue.Value);
+        Assert.True(trueValue.BoolValue);
     }
 
     [Fact]

@@ -10,7 +10,7 @@ public sealed record UShortTests
     {
         const ushort testValue = 11324;
         INumber<ushort> ushortPrimitive = new UShort(testValue);
-        Assert.Equal(testValue, ushortPrimitive.Value);
+        Assert.Equal(testValue, ushortPrimitive.NumberValue);
     }
 
     [Fact]

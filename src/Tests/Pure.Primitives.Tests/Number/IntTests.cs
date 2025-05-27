@@ -10,7 +10,7 @@ public sealed record IntTests
     {
         const int testValue = 1910283761;
         INumber<int> doublePrimitive = new Int(testValue);
-        Assert.Equal(testValue, doublePrimitive.Value);
+        Assert.Equal(testValue, doublePrimitive.NumberValue);
     }
 
     [Fact]

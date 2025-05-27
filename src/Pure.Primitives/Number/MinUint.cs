@@ -5,7 +5,7 @@ namespace Pure.Primitives.Number;
 
 public sealed record MinUint : INumber<uint>
 {
-    uint INumber<uint>.Value => uint.MinValue;
+    uint INumber<uint>.NumberValue => uint.MinValue;
 
     public override int GetHashCode()
     {

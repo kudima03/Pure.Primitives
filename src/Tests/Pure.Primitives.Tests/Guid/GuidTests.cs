@@ -12,21 +12,21 @@ public sealed record GuidTests
     {
         System.Guid testValue = System.Guid.NewGuid();
         IGuid guidPrimitive = new Guid(testValue);
-        Assert.Equal(testValue, guidPrimitive.Value);
+        Assert.Equal(testValue, guidPrimitive.GuidValue);
     }
 
     [Fact]
     public void InitializeFromEmptyConstructor()
     {
         IGuid guidPrimitive = new Guid();
-        Assert.True(System.Guid.TryParse(guidPrimitive.Value.ToString(), out System.Guid _));
+        Assert.True(System.Guid.TryParse(guidPrimitive.GuidValue.ToString(), out System.Guid _));
     }
 
     [Fact]
     public void InitializeFromEmptyConstructorWithNotEmptyGuid()
     {
         IGuid guidPrimitive = new Guid();
-        Assert.NotEqual(System.Guid.Empty, guidPrimitive.Value);
+        Assert.NotEqual(System.Guid.Empty, guidPrimitive.GuidValue);
     }
 
     [Fact]

@@ -11,14 +11,14 @@ public sealed record EmptyStringTests
     public void InitializeFromScalarConstructor()
     {
         IString stringPrimitive = new EmptyString();
-        Assert.Equal(string.Empty, stringPrimitive.Value);
+        Assert.Equal(string.Empty, stringPrimitive.TextValue);
     }
 
     [Fact]
     public void EnumeratesAsTyped()
     {
         IEnumerable<IChar> stringPrimitive = new EmptyString();
-        Assert.True(string.Empty.SequenceEqual(stringPrimitive.Select(x => x.Value)));
+        Assert.True(string.Empty.SequenceEqual(stringPrimitive.Select(x => x.CharValue)));
     }
 
     [Fact]
@@ -33,7 +33,7 @@ public sealed record EmptyStringTests
             symbols.Add((symbol as IChar)!);
         }
 
-        Assert.True(string.Empty.SequenceEqual(symbols.Select(x => x.Value)));
+        Assert.True(string.Empty.SequenceEqual(symbols.Select(x => x.CharValue)));
     }
 
     [Fact]

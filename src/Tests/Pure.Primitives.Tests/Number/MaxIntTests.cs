@@ -9,7 +9,7 @@ public sealed record MaxIntTests
     public void InitializeAsMaxInt()
     {
         INumber<int> primitive = new MaxInt();
-        Assert.Equal(int.MaxValue, primitive.Value);
+        Assert.Equal(int.MaxValue, primitive.NumberValue);
     }
 
     [Fact]

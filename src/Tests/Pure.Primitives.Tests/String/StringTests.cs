@@ -14,7 +14,7 @@ public sealed record StringTests
     {
         const string testValue = "Test Value";
         IString stringPrimitive = new String(testValue);
-        Assert.Equal(testValue, stringPrimitive.Value);
+        Assert.Equal(testValue, stringPrimitive.TextValue);
     }
 
     [Fact]
@@ -22,7 +22,7 @@ public sealed record StringTests
     {
         const string testValue = "Test Value";
         IEnumerable<IChar> stringPrimitive = new String(testValue);
-        Assert.True(testValue.SequenceEqual(stringPrimitive.Select(x => x.Value)));
+        Assert.True(testValue.SequenceEqual(stringPrimitive.Select(x => x.CharValue)));
     }
 
     [Fact]
@@ -39,7 +39,7 @@ public sealed record StringTests
             symbols.Add((symbol as IChar)!);
         }
 
-        Assert.True(testValue.SequenceEqual(symbols.Select(x => x.Value)));
+        Assert.True(testValue.SequenceEqual(symbols.Select(x => x.CharValue)));
     }
 
     [Fact]

@@ -11,14 +11,14 @@ public sealed record NewLineStringTests
     public void ReturnCorrectValue()
     {
         IString stringPrimitive = new NewLineString();
-        Assert.Equal(Environment.NewLine, stringPrimitive.Value);
+        Assert.Equal(Environment.NewLine, stringPrimitive.TextValue);
     }
 
     [Fact]
     public void EnumeratesAsTyped()
     {
         IEnumerable<IChar> stringPrimitive = new NewLineString();
-        Assert.True(Environment.NewLine.SequenceEqual(stringPrimitive.Select(x => x.Value)));
+        Assert.True(Environment.NewLine.SequenceEqual(stringPrimitive.Select(x => x.CharValue)));
     }
 
     [Fact]
@@ -33,7 +33,7 @@ public sealed record NewLineStringTests
             symbols.Add((symbol as IChar)!);
         }
 
-        Assert.True(Environment.NewLine.SequenceEqual(symbols.Select(x => x.Value)));
+        Assert.True(Environment.NewLine.SequenceEqual(symbols.Select(x => x.CharValue)));
     }
 
     [Fact]

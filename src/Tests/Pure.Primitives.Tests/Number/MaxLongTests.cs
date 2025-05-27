@@ -9,7 +9,7 @@ public sealed record MaxLongTests
     public void InitializeAsMaxLong()
     {
         INumber<long> primitive = new MaxLong();
-        Assert.Equal(long.MaxValue, primitive.Value);
+        Assert.Equal(long.MaxValue, primitive.NumberValue);
     }
 
     [Fact]

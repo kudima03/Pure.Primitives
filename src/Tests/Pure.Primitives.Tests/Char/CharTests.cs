@@ -12,7 +12,7 @@ public sealed record CharTests
     {
         const char testValue = 'X';
         IChar charPrimitive = new Char(testValue);
-        Assert.Equal(testValue, charPrimitive.Value);
+        Assert.Equal(testValue, charPrimitive.CharValue);
     }
 
     [Fact]

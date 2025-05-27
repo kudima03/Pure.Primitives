@@ -9,7 +9,7 @@ public sealed record MaxFloatTests
     public void InitializeAsMaxFloat()
     {
         INumber<float> primitive = new MaxFloat();
-        Assert.Equal(float.MaxValue, primitive.Value);
+        Assert.Equal(float.MaxValue, primitive.NumberValue);
     }
 
     [Fact]

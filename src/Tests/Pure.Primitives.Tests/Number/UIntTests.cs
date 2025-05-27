@@ -10,7 +10,7 @@ public sealed record UIntTests
     {
         const uint testValue = 3910283761;
         INumber<uint> uintPrimitive = new UInt(testValue);
-        Assert.Equal(testValue, uintPrimitive.Value);
+        Assert.Equal(testValue, uintPrimitive.NumberValue);
     }
 
     [Fact]

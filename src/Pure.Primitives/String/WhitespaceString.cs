@@ -11,7 +11,7 @@ public sealed record WhitespaceString : IString
 {
     private const string value = " ";
 
-    string IString.Value => value;
+    string IString.TextValue => value;
 
     public IEnumerator<IChar> GetEnumerator()
     {

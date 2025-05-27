@@ -10,7 +10,7 @@ public sealed record LongTests
     {
         const long testValue = 1910283761123132897;
         INumber<long> doublePrimitive = new Long(testValue);
-        Assert.Equal(testValue, doublePrimitive.Value);
+        Assert.Equal(testValue, doublePrimitive.NumberValue);
     }
 
     [Fact]
