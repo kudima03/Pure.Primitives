@@ -15,7 +15,7 @@ public sealed record DateTests
         IDate date = new Date(dateOnly);
 
         Assert.Equal(dateOnly, date.DateValue);
-    } 
+    }
 
     [Fact]
     public void InitializeFromNumbers()
@@ -28,8 +28,8 @@ public sealed record DateTests
             new UShort((ushort)dateOnly.Year));
 
         Assert.Equal(dateOnly, date.DateValue);
-    } 
-    
+    }
+
     [Fact]
     public void ThrowExceptionOnGetHashCode()
     {
@@ -40,7 +40,7 @@ public sealed record DateTests
     [Fact]
     public void ThrowExceptionOnToString()
     {
-        Assert.Throws<NotSupportedException>(() => 
+        Assert.Throws<NotSupportedException>(() =>
             new Date(new UShort(1), new UShort(1), new UShort(2000)).ToString());
     }
 }

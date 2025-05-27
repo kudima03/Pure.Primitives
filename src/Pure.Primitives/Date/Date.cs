@@ -13,10 +13,11 @@ public sealed record Date : IDate
 
     private readonly INumber<ushort> _year;
 
-    public Date(DateOnly date) : 
-        this(new UShort((ushort)date.Day), 
-            new UShort((ushort)date.Month), 
-            new UShort((ushort)date.Year)) { }
+    public Date(DateOnly date) :
+        this(new UShort((ushort)date.Day),
+            new UShort((ushort)date.Month),
+            new UShort((ushort)date.Year))
+    { }
 
     public Date(INumber<ushort> day, INumber<ushort> month, INumber<ushort> year)
     {
