@@ -12,7 +12,7 @@ public sealed record UShort : INumber<ushort>
         _value = value;
     }
 
-    ushort INumber<ushort>.Value => _value;
+    ushort INumber<ushort>.NumberValue => _value;
 
     public override int GetHashCode()
     {

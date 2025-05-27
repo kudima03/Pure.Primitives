@@ -9,7 +9,7 @@ public sealed record MinDoubleTests
     public void InitializeAsMinDouble()
     {
         INumber<double> primitive = new MinDouble();
-        Assert.Equal(double.MinValue, primitive.Value);
+        Assert.Equal(double.MinValue, primitive.NumberValue);
     }
 
     [Fact]

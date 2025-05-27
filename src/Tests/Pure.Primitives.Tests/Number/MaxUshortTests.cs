@@ -9,7 +9,7 @@ public sealed record MaxUshortTests
     public void InitializeAsMinInt()
     {
         INumber<ushort> primitive = new MaxUshort();
-        Assert.Equal(ushort.MaxValue, primitive.Value);
+        Assert.Equal(ushort.MaxValue, primitive.NumberValue);
     }
 
     [Fact]

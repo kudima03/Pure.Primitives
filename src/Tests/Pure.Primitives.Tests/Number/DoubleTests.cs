@@ -11,7 +11,7 @@ public sealed record DoubleTests
     {
         const double testValue = 1.12837491280374129387591229837529183759012;
         INumber<double> doublePrimitive = new Double(testValue);
-        Assert.Equal(testValue, doublePrimitive.Value);
+        Assert.Equal(testValue, doublePrimitive.NumberValue);
     }
 
     [Fact]

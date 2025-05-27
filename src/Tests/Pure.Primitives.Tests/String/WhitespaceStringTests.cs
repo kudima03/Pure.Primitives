@@ -11,14 +11,14 @@ public sealed record WhitespaceStringTests
     public void InitializeFromScalarConstructor()
     {
         IString stringPrimitive = new WhitespaceString();
-        Assert.Equal(" ", stringPrimitive.Value);
+        Assert.Equal(" ", stringPrimitive.TextValue);
     }
 
     [Fact]
     public void EnumeratesAsTyped()
     {
         IEnumerable<IChar> stringPrimitive = new WhitespaceString();
-        Assert.True(" ".SequenceEqual(stringPrimitive.Select(x => x.Value)));
+        Assert.True(" ".SequenceEqual(stringPrimitive.Select(x => x.CharValue)));
     }
 
     [Fact]
@@ -33,7 +33,7 @@ public sealed record WhitespaceStringTests
             symbols.Add((symbol as IChar)!);
         }
 
-        Assert.True(" ".SequenceEqual(symbols.Select(x => x.Value)));
+        Assert.True(" ".SequenceEqual(symbols.Select(x => x.CharValue)));
     }
 
     [Fact]

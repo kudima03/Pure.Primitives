@@ -11,7 +11,7 @@ public sealed record NewLineString : IString
 {
     private readonly string _value = Environment.NewLine;
 
-    string IString.Value => _value;
+    string IString.TextValue => _value;
 
     public IEnumerator<IChar> GetEnumerator()
     {

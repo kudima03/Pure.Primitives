@@ -10,7 +10,7 @@ public sealed record MondayTests
     {
         const int expectedValue = 1;
         IDayOfWeek dayOfWeek = new Monday();
-        Assert.Equal(expectedValue, dayOfWeek.DayNumber.Value);
+        Assert.Equal(expectedValue, dayOfWeek.DayNumberValue.NumberValue);
     }
 
     [Fact]

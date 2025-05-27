@@ -12,7 +12,7 @@ public sealed record Double : INumber<double>
         _value = value;
     }
 
-    double INumber<double>.Value => _value;
+    double INumber<double>.NumberValue => _value;
 
     public override int GetHashCode()
     {

@@ -9,7 +9,7 @@ public sealed record MinUshortTests
     public void InitializeAsMinInt()
     {
         INumber<ushort> primitive = new MinUshort();
-        Assert.Equal(ushort.MinValue, primitive.Value);
+        Assert.Equal(ushort.MinValue, primitive.NumberValue);
     }
 
     [Fact]

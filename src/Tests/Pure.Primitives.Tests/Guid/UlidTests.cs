@@ -10,14 +10,14 @@ public sealed record UlidTests
     {
         System.Guid testValue = System.Guid.CreateVersion7();
         IGuid guidPrimitive = new Ulid(testValue);
-        Assert.Equal(testValue, guidPrimitive.Value);
+        Assert.Equal(testValue, guidPrimitive.GuidValue);
     }
 
     [Fact]
     public void InitializeFromEmptyConstructor()
     {
         IGuid guidPrimitive = new Ulid();
-        Assert.True(System.Guid.TryParse(guidPrimitive.Value.ToString(), out System.Guid _));
+        Assert.True(System.Guid.TryParse(guidPrimitive.GuidValue.ToString(), out System.Guid _));
     }
 
     [Fact]
@@ -33,14 +33,14 @@ public sealed record UlidTests
         }
 
         Assert.True(values.Select(x => x.orderNumber)
-            .SequenceEqual(values.OrderBy(x => x.ulid.Value).Select(x => x.orderNumber)));
+            .SequenceEqual(values.OrderBy(x => x.ulid.GuidValue).Select(x => x.orderNumber)));
     }
 
     [Fact]
     public void InitializeFromEmptyConstructorWithNotEmptyGuid()
     {
         IGuid guidPrimitive = new Ulid();
-        Assert.NotEqual(System.Guid.Empty, guidPrimitive.Value);
+        Assert.NotEqual(System.Guid.Empty, guidPrimitive.GuidValue);
     }
 
     [Fact]

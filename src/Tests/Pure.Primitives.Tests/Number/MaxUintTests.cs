@@ -9,7 +9,7 @@ public sealed record MaxUintTests
     public void InitializeAsMaxUint()
     {
         INumber<uint> primitive = new MaxUint();
-        Assert.Equal(uint.MaxValue, primitive.Value);
+        Assert.Equal(uint.MaxValue, primitive.NumberValue);
     }
 
     [Fact]

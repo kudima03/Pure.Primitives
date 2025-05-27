@@ -14,7 +14,7 @@ public sealed record Ulid : IGuid
         _value = value;
     }
 
-    System.Guid IGuid.Value => _value;
+    System.Guid IGuid.GuidValue => _value;
 
     public override int GetHashCode()
     {

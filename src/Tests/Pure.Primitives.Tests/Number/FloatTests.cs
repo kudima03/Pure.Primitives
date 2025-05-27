@@ -10,7 +10,7 @@ public sealed record FloatTests
     {
         const float testValue = 1.12837491280374129387837529183759012F;
         INumber<float> doublePrimitive = new Float(testValue);
-        Assert.Equal(testValue, doublePrimitive.Value);
+        Assert.Equal(testValue, doublePrimitive.NumberValue);
     }
 
     [Fact]

@@ -9,7 +9,7 @@ public sealed record MaxDoubleTests
     public void InitializeAsMaxDouble()
     {
         INumber<double> primitive = new MaxDouble();
-        Assert.Equal(double.MaxValue, primitive.Value);
+        Assert.Equal(double.MaxValue, primitive.NumberValue);
     }
 
     [Fact]

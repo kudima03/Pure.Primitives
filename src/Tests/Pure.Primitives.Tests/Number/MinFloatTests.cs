@@ -9,7 +9,7 @@ public sealed record MinFloatTests
     public void InitializeAsMinFloat()
     {
         INumber<float> primitive = new MinFloat();
-        Assert.Equal(float.MinValue, primitive.Value);
+        Assert.Equal(float.MinValue, primitive.NumberValue);
     }
 
     [Fact]

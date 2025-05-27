@@ -16,7 +16,7 @@ public sealed record String : IString
         _value = value;
     }
 
-    string IString.Value => _value;
+    string IString.TextValue => _value;
 
     public IEnumerator<IChar> GetEnumerator()
     {

@@ -9,7 +9,7 @@ public sealed record MinIntTests
     public void InitializeAsMinInt()
     {
         INumber<int> primitive = new MinInt();
-        Assert.Equal(int.MinValue, primitive.Value);
+        Assert.Equal(int.MinValue, primitive.NumberValue);
     }
 
     [Fact]

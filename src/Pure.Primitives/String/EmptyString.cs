@@ -11,7 +11,7 @@ public sealed record EmptyString : IString
 {
     private readonly string _value = string.Empty;
 
-    string IString.Value => _value;
+    string IString.TextValue => _value;
 
     public IEnumerator<IChar> GetEnumerator()
     {

@@ -9,7 +9,7 @@ public sealed record FalseTests
     public void InitializeFromDefaultConstructor()
     {
         IBool trueValue = new False();
-        Assert.False(trueValue.Value);
+        Assert.False(trueValue.BoolValue);
     }
 
     [Fact]

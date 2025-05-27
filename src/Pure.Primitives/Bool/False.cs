@@ -5,7 +5,7 @@ namespace Pure.Primitives.Bool;
 
 public sealed record False : IBool
 {
-    bool IBool.Value => false;
+    bool IBool.BoolValue => false;
 
     public override int GetHashCode()
     {
