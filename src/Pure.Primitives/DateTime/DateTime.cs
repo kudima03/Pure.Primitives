@@ -9,62 +9,33 @@ namespace Pure.Primitives.DateTime;
 
 public sealed record DateTime : IDateTime
 {
-    private readonly INumber<ushort> _day;
-    private readonly INumber<ushort> _month;
-    private readonly INumber<ushort> _year;
-    private readonly INumber<ushort> _hour;
-    private readonly INumber<ushort> _minute;
-    private readonly INumber<ushort> _second;
-    private readonly INumber<ushort> _millisecond;
-    private readonly INumber<ushort> _microsecond;
+    private readonly IDate _date;
 
-    public DateTime(IDate date) : this(date.DateValue) { }
+    private readonly ITime _time;
 
-    public DateTime(IDate date, ITime time) : this(date.DateValue, time.TimeValue) { }
+    public DateTime(IDate date) : this(date, new Time.Time(new UShort(0), new UShort(0), new UShort(0))) { }
 
-    public DateTime(DateOnly date) : this(date, new TimeOnly(0, 0)) { }
-
-    public DateTime(DateOnly date, TimeOnly time) : this(
-        new UShort((ushort)date.Day),
-        new UShort((ushort)date.Month),
-        new UShort((ushort)date.Year),
-        new UShort((ushort)time.Hour),
-        new UShort((ushort)time.Minute),
-        new UShort((ushort)time.Second),
-        new UShort((ushort)time.Millisecond),
-        new UShort((ushort)time.Microsecond))
-    { }
-
-    public DateTime(INumber<ushort> day,
-        INumber<ushort> month,
-        INumber<ushort> year,
-        INumber<ushort> hour,
-        INumber<ushort> minute,
-        INumber<ushort> second,
-        INumber<ushort> millisecond,
-        INumber<ushort> microsecond)
+    public DateTime(IDate date, ITime time)
     {
-        _day = day;
-        _month = month;
-        _year = year;
-        _hour = hour;
-        _minute = minute;
-        _second = second;
-        _millisecond = millisecond;
-        _microsecond = microsecond;
+        _date = date;
+        _time = time;
     }
 
-    DateOnly IDate.DateValue => new DateOnly(
-        _year.NumberValue,
-        _month.NumberValue,
-        _day.NumberValue);
+    public INumber<ushort> Day => _date.Day;
 
-    TimeOnly ITime.TimeValue => new TimeOnly(
-        _hour.NumberValue,
-        _minute.NumberValue,
-        _second.NumberValue,
-        _millisecond.NumberValue,
-        _microsecond.NumberValue);
+    public INumber<ushort> Month => _date.Month;
+
+    public INumber<ushort> Year => _date.Year;
+
+    public INumber<ushort> Hour => _time.Hour;
+
+    public INumber<ushort> Minute => _time.Minute;
+
+    public INumber<ushort> Second => _time.Second;
+
+    public INumber<ushort> Millisecond => _time.Millisecond;
+
+    public INumber<ushort> Microsecond => _time.Microsecond;
 
     public override int GetHashCode()
     {
