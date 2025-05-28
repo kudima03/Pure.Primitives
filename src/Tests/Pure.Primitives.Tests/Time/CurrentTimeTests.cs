@@ -9,7 +9,7 @@ public sealed record CurrentTimeTests
     public void InitializeCorrectly()
     {
         TimeOnly time = new TimeOnly(System.DateTime.Now.Hour,
-            System.DateTime.Now.Minute, 
+            System.DateTime.Now.Minute,
             System.DateTime.Now.Second);
 
         ITime currentTime = new CurrentTime();

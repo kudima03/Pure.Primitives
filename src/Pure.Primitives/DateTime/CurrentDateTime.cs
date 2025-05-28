@@ -13,7 +13,7 @@ public sealed record CurrentDateTime : IDateTime
     private readonly IDate _date = new CurrentDate();
 
     private readonly ITime _time = new CurrentTime();
-    
+
     public INumber<ushort> Day => _date.Day;
 
     public INumber<ushort> Month => _date.Month;
