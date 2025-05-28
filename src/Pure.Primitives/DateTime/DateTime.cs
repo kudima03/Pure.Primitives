@@ -13,7 +13,7 @@ public sealed record DateTime : IDateTime
 
     private readonly ITime _time;
 
-    public DateTime(IDate date) : this(date, new Time.Time(new UShort(0), new UShort(0), new UShort(0))) { }
+    public DateTime(IDate date) : this(date, new Time.Time(new Zero<ushort>(), new Zero<ushort>())) { }
 
     public DateTime(IDate date, ITime time)
     {
