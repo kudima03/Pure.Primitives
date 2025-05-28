@@ -14,7 +14,7 @@ public sealed record DateTests
 
         IDate date = new Date(dateOnly);
 
-        Assert.Equal(dateOnly, date.DateValue);
+        Assert.Equal(dateOnly, new DateOnly(date.Year.NumberValue, date.Month.NumberValue, date.Day.NumberValue));
     }
 
     [Fact]
@@ -27,7 +27,7 @@ public sealed record DateTests
             new UShort((ushort)dateOnly.Month),
             new UShort((ushort)dateOnly.Year));
 
-        Assert.Equal(dateOnly, date.DateValue);
+        Assert.Equal(dateOnly, new DateOnly(date.Year.NumberValue, date.Month.NumberValue, date.Day.NumberValue));
     }
 
     [Fact]

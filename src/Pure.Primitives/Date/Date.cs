@@ -7,12 +7,6 @@ namespace Pure.Primitives.Date;
 
 public sealed record Date : IDate
 {
-    private readonly INumber<ushort> _day;
-
-    private readonly INumber<ushort> _month;
-
-    private readonly INumber<ushort> _year;
-
     public Date(DateOnly date) :
         this(new UShort((ushort)date.Day),
             new UShort((ushort)date.Month),
@@ -21,12 +15,16 @@ public sealed record Date : IDate
 
     public Date(INumber<ushort> day, INumber<ushort> month, INumber<ushort> year)
     {
-        _day = day;
-        _month = month;
-        _year = year;
+        Day = day;
+        Month = month;
+        Year = year;
     }
 
-    DateOnly IDate.DateValue => new DateOnly(_year.NumberValue, _month.NumberValue, _day.NumberValue);
+    public INumber<ushort> Day { get; }
+
+    public INumber<ushort> Month { get; }
+
+    public INumber<ushort> Year { get; }
 
     public override int GetHashCode()
     {

@@ -1,5 +1,4 @@
 ﻿using Pure.Primitives.Abstractions.DateTime;
-using Pure.Primitives.Number;
 
 namespace Pure.Primitives.Tests.DateTime;
 
@@ -9,28 +8,6 @@ using Time = Primitives.Time.Time;
 
 public sealed record DateTimeTests
 {
-    [Fact]
-    public void InitializeFromDateOnlyTimeOnly()
-    {
-        DateOnly dateOnly = new DateOnly(2000, 1, 1);
-
-        TimeOnly timeOnly = new TimeOnly(15, 30, 30, 30, 30);
-
-        IDateTime date = new DateTime(dateOnly, timeOnly);
-
-        Assert.Equal(dateOnly, date.DateValue);
-    }
-
-    [Fact]
-    public void InitializeFromDateOnly()
-    {
-        DateOnly dateOnly = new DateOnly(2000, 1, 1);
-
-        IDateTime date = new DateTime(dateOnly);
-
-        Assert.Equal(dateOnly, date.DateValue);
-    }
-
     [Fact]
     public void InitializeFromIDateITime()
     {
@@ -42,7 +19,16 @@ public sealed record DateTimeTests
 
         Assert.Equal(
             new System.DateTime(dateOnly, timeOnly),
-            new System.DateTime(date.DateValue, date.TimeValue));
+            new System.DateTime(new DateOnly(
+                    date.Year.NumberValue,
+                    date.Month.NumberValue,
+                    date.Day.NumberValue),
+                new TimeOnly(
+                    date.Hour.NumberValue,
+                    date.Minute.NumberValue,
+                    date.Second.NumberValue,
+                    date.Millisecond.NumberValue,
+                    date.Microsecond.NumberValue)));
     }
 
     [Fact]
@@ -52,40 +38,20 @@ public sealed record DateTimeTests
 
         IDateTime date = new DateTime(new Date(dateOnly));
 
-        Assert.Equal(dateOnly, date.DateValue);
-    }
-
-    [Fact]
-    public void InitializeFromNumbers()
-    {
-        DateOnly dateOnly = new DateOnly(2000, 1, 1);
-
-        TimeOnly timeOnly = new TimeOnly(15, 30, 30, 30, 30);
-
-        IDateTime date = new DateTime(
-            new UShort((ushort)dateOnly.Day),
-            new UShort((ushort)dateOnly.Month),
-            new UShort((ushort)dateOnly.Year),
-            new UShort((ushort)timeOnly.Hour),
-            new UShort((ushort)timeOnly.Minute),
-            new UShort((ushort)timeOnly.Second),
-            new UShort((ushort)timeOnly.Millisecond),
-            new UShort((ushort)timeOnly.Microsecond));
-
-        Assert.Equal(
-            new System.DateTime(dateOnly, timeOnly),
-            new System.DateTime(date.DateValue, date.TimeValue));
+        Assert.Equal(dateOnly, new DateOnly(date.Year.NumberValue,
+            date.Month.NumberValue,
+            date.Day.NumberValue));
     }
 
     [Fact]
     public void ThrowExceptionOnGetHashCode()
     {
-        Assert.Throws<NotSupportedException>(() => new DateTime(DateOnly.MaxValue).GetHashCode());
+        Assert.Throws<NotSupportedException>(() => new DateTime(new Date(DateOnly.MaxValue)).GetHashCode());
     }
 
     [Fact]
     public void ThrowExceptionOnToString()
     {
-        Assert.Throws<NotSupportedException>(() => new DateTime(DateOnly.MaxValue).ToString());
+        Assert.Throws<NotSupportedException>(() => new DateTime(new Date(DateOnly.MaxValue)).ToString());
     }
 }
