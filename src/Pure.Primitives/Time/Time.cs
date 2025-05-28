@@ -17,13 +17,13 @@ public sealed record Time : ITime
 
     public Time(INumber<ushort> hour,
         INumber<ushort> minute) :
-        this(hour, minute, new UShort(0), new UShort(0), new UShort(0))
+        this(hour, minute, new Zero<ushort>(), new Zero<ushort>(), new Zero<ushort>())
     { }
 
     public Time(INumber<ushort> hour,
         INumber<ushort> minute,
         INumber<ushort> second) :
-        this(hour, minute, second, new UShort(0), new UShort(0))
+        this(hour, minute, second, new Zero<ushort>(), new Zero<ushort>())
     { }
 
     public Time(INumber<ushort> hour,
