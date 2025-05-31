@@ -15,12 +15,12 @@ public sealed record MaxDecimalTests
     [Fact]
     public void ThrowExceptionOnGetHashCode()
     {
-        Assert.Throws<NotSupportedException>(() => new MaxDouble().GetHashCode());
+        Assert.Throws<NotSupportedException>(() => new MaxDecimal().GetHashCode());
     }
 
     [Fact]
     public void ThrowExceptionOnToString()
     {
-        Assert.Throws<NotSupportedException>(() => new MaxDouble().ToString());
+        Assert.Throws<NotSupportedException>(() => new MaxDecimal().ToString());
     }
 }

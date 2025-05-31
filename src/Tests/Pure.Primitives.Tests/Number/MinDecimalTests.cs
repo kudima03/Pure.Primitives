@@ -15,12 +15,12 @@ public sealed record MinDecimalTests
     [Fact]
     public void ThrowExceptionOnGetHashCode()
     {
-        Assert.Throws<NotSupportedException>(() => new MaxDouble().GetHashCode());
+        Assert.Throws<NotSupportedException>(() => new MinDecimal().GetHashCode());
     }
 
     [Fact]
     public void ThrowExceptionOnToString()
     {
-        Assert.Throws<NotSupportedException>(() => new MaxDouble().ToString());
+        Assert.Throws<NotSupportedException>(() => new MinDecimal().ToString());
     }
 }
