@@ -31,7 +31,7 @@ public sealed record Time : ITime
         INumber<ushort> minute,
         INumber<ushort> second,
         INumber<ushort> millisecond,
-        INumber<ushort> microsecond, 
+        INumber<ushort> microsecond,
         INumber<ushort> nanoseconds)
     {
         Hour = hour;
