@@ -20,6 +20,8 @@ public sealed record TimeTests
                 time.Second.NumberValue,
                 time.Millisecond.NumberValue,
                 time.Microsecond.NumberValue));
+
+        Assert.Equal(timeOnly.Nanosecond, time.Nanoseconds.NumberValue);
     }
 
     [Fact]
@@ -39,6 +41,8 @@ public sealed record TimeTests
             time.Second.NumberValue,
             time.Millisecond.NumberValue,
             time.Microsecond.NumberValue));
+
+        Assert.Equal(timeOnly.Nanosecond, time.Nanoseconds.NumberValue);
     }
 
     [Fact]
