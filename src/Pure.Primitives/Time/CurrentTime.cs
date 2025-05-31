@@ -17,6 +17,8 @@ public sealed record CurrentTime : ITime
 
     public INumber<ushort> Microsecond { get; } = new UShort((ushort)System.DateTime.Now.Microsecond);
 
+    public INumber<ushort> Nanoseconds { get; } = new UShort((ushort)System.DateTime.Now.Nanosecond);
+
     public override int GetHashCode()
     {
         throw new NotSupportedException();

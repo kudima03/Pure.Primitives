@@ -20,6 +20,8 @@ public sealed record TimeTests
                 time.Second.NumberValue,
                 time.Millisecond.NumberValue,
                 time.Microsecond.NumberValue));
+
+        Assert.Equal(timeOnly.Nanosecond, time.Nanoseconds.NumberValue);
     }
 
     [Fact]
@@ -31,13 +33,16 @@ public sealed record TimeTests
             new UShort((ushort)timeOnly.Minute),
             new UShort((ushort)timeOnly.Second),
             new UShort((ushort)timeOnly.Millisecond),
-            new UShort((ushort)timeOnly.Microsecond));
+            new UShort((ushort)timeOnly.Microsecond),
+            new UShort((ushort)timeOnly.Nanosecond));
 
         Assert.Equal(timeOnly, new TimeOnly(time.Hour.NumberValue,
             time.Minute.NumberValue,
             time.Second.NumberValue,
             time.Millisecond.NumberValue,
             time.Microsecond.NumberValue));
+
+        Assert.Equal(timeOnly.Nanosecond, time.Nanoseconds.NumberValue);
     }
 
     [Fact]
