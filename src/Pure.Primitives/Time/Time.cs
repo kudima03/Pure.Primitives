@@ -12,31 +12,34 @@ public sealed record Time : ITime
         new UShort((ushort)timeOnly.Minute),
         new UShort((ushort)timeOnly.Second),
         new UShort((ushort)timeOnly.Millisecond),
-        new UShort((ushort)timeOnly.Microsecond))
+        new UShort((ushort)timeOnly.Microsecond),
+        new UShort((ushort)timeOnly.Nanosecond))
     { }
 
     public Time(INumber<ushort> hour,
         INumber<ushort> minute) :
-        this(hour, minute, new Zero<ushort>(), new Zero<ushort>(), new Zero<ushort>())
+        this(hour, minute, new Zero<ushort>(), new Zero<ushort>(), new Zero<ushort>(), new Zero<ushort>())
     { }
 
     public Time(INumber<ushort> hour,
         INumber<ushort> minute,
         INumber<ushort> second) :
-        this(hour, minute, second, new Zero<ushort>(), new Zero<ushort>())
+        this(hour, minute, second, new Zero<ushort>(), new Zero<ushort>(), new Zero<ushort>())
     { }
 
     public Time(INumber<ushort> hour,
         INumber<ushort> minute,
         INumber<ushort> second,
         INumber<ushort> millisecond,
-        INumber<ushort> microsecond)
+        INumber<ushort> microsecond, 
+        INumber<ushort> nanoseconds)
     {
         Hour = hour;
         Minute = minute;
         Second = second;
         Millisecond = millisecond;
         Microsecond = microsecond;
+        Nanoseconds = nanoseconds;
     }
 
     public INumber<ushort> Hour { get; }
@@ -48,6 +51,8 @@ public sealed record Time : ITime
     public INumber<ushort> Millisecond { get; }
 
     public INumber<ushort> Microsecond { get; }
+
+    public INumber<ushort> Nanoseconds { get; }
 
     public override int GetHashCode()
     {

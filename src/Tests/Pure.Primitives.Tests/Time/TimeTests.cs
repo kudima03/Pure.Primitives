@@ -31,7 +31,8 @@ public sealed record TimeTests
             new UShort((ushort)timeOnly.Minute),
             new UShort((ushort)timeOnly.Second),
             new UShort((ushort)timeOnly.Millisecond),
-            new UShort((ushort)timeOnly.Microsecond));
+            new UShort((ushort)timeOnly.Microsecond),
+            new UShort((ushort)timeOnly.Nanosecond));
 
         Assert.Equal(timeOnly, new TimeOnly(time.Hour.NumberValue,
             time.Minute.NumberValue,

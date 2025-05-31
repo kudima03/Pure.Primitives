@@ -37,6 +37,8 @@ public sealed record DateTime : IDateTime
 
     public INumber<ushort> Microsecond => _time.Microsecond;
 
+    public INumber<ushort> Nanoseconds => _time.Nanoseconds;
+
     public override int GetHashCode()
     {
         throw new NotSupportedException();

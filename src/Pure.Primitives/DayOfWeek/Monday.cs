@@ -7,7 +7,7 @@ namespace Pure.Primitives.DayOfWeek;
 
 public sealed record Monday : IDayOfWeek
 {
-    INumber<int> IDayOfWeek.DayNumberValue => new Int(1);
+    INumber<ushort> IDayOfWeek.DayNumberValue => new UShort(1);
 
     public override int GetHashCode()
     {
