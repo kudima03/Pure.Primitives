@@ -21,7 +21,7 @@ public sealed record TimeTests
                 time.Millisecond.NumberValue,
                 time.Microsecond.NumberValue));
 
-        Assert.Equal(timeOnly.Nanosecond, time.Nanoseconds.NumberValue);
+        Assert.Equal(timeOnly.Nanosecond, time.Nanosecond.NumberValue);
     }
 
     [Fact]
@@ -42,7 +42,7 @@ public sealed record TimeTests
             time.Millisecond.NumberValue,
             time.Microsecond.NumberValue));
 
-        Assert.Equal(timeOnly.Nanosecond, time.Nanoseconds.NumberValue);
+        Assert.Equal(timeOnly.Nanosecond, time.Nanosecond.NumberValue);
     }
 
     [Fact]
