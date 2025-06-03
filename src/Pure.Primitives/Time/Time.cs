@@ -32,14 +32,14 @@ public sealed record Time : ITime
         INumber<ushort> second,
         INumber<ushort> millisecond,
         INumber<ushort> microsecond,
-        INumber<ushort> nanoseconds)
+        INumber<ushort> nanosecond)
     {
         Hour = hour;
         Minute = minute;
         Second = second;
         Millisecond = millisecond;
         Microsecond = microsecond;
-        Nanoseconds = nanoseconds;
+        Nanosecond = nanosecond;
     }
 
     public INumber<ushort> Hour { get; }
@@ -52,7 +52,7 @@ public sealed record Time : ITime
 
     public INumber<ushort> Microsecond { get; }
 
-    public INumber<ushort> Nanoseconds { get; }
+    public INumber<ushort> Nanosecond { get; }
 
     public override int GetHashCode()
     {
