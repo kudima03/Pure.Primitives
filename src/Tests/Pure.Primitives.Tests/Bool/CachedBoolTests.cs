@@ -12,7 +12,7 @@ public sealed record CachedBoolTests
         IBool cachedValue = new CachedBool(underlyingValue);
         _ = Enumerable.Range(0, 100).All(_ => cachedValue.BoolValue);
 
-        Assert.Equal(underlyingValue.EvaluationCount , 1);
+        Assert.Equal(1, underlyingValue.EvaluationCount);
     }
 
     [Fact]
