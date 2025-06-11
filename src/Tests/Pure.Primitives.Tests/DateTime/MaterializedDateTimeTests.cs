@@ -14,13 +14,13 @@ public sealed record MaterializedDateTimeTests
         IEnumerable<IDateTime> randomDateTimes = new RandomDateTimeCollection(new UShort(100)).ToArray();
 
         IEnumerable<System.DateTime> materialized = randomDateTimes.Select(x => new MaterializedDateTime(x).Value);
-        IEnumerable<System.DateTime> dateTimes = randomDateTimes.Select(x => 
-            new System.DateTime(x.Year.NumberValue, 
+        IEnumerable<System.DateTime> dateTimes = randomDateTimes.Select(x =>
+            new System.DateTime(x.Year.NumberValue,
                 x.Month.NumberValue,
-                x.Day.NumberValue, 
-                x.Hour.NumberValue, 
+                x.Day.NumberValue,
+                x.Hour.NumberValue,
                 x.Minute.NumberValue,
-                x.Second.NumberValue, 
+                x.Second.NumberValue,
                 x.Millisecond.NumberValue,
                 x.Microsecond.NumberValue));
 
