@@ -1,29 +1,30 @@
-﻿using Pure.Primitives.DateTime;
+﻿using Pure.Primitives.Abstractions.DateTime;
+using Pure.Primitives.DateTime;
+using Pure.Primitives.Number;
+using Pure.Primitives.Random.DateTime;
 using Pure.Primitives.Time;
-using RandomDataGenerator.FieldOptions;
-using RandomDataGenerator.Randomizers;
 
 namespace Pure.Primitives.Tests.DateTime;
-
-using Date = Primitives.Date.Date;
-using DateTime = Primitives.DateTime.DateTime;
-using Time = Primitives.Time.Time;
 
 public sealed record MaterializedDateTimeTests
 {
     [Fact]
     public void MaterializeCorrectly()
     {
-        IRandomizerDateTime dateTimeRandomizer = new RandomizerDateTime(new FieldOptionsDateTime());
+        IEnumerable<IDateTime> randomDateTimes = new RandomDateTimeCollection(new UShort(100)).ToArray();
 
-        IReadOnlyCollection<System.DateTime> randomDateTimes =
-            Enumerable.Range(0, 1000)
-                .Select(_ => System.DateTime.Parse(dateTimeRandomizer.Generate()!.Value.ToString("G"))).ToArray();
+        IEnumerable<System.DateTime> materialized = randomDateTimes.Select(x => new MaterializedDateTime(x).Value);
+        IEnumerable<System.DateTime> dateTimes = randomDateTimes.Select(x =>
+            new System.DateTime(x.Year.NumberValue,
+                x.Month.NumberValue,
+                x.Day.NumberValue,
+                x.Hour.NumberValue,
+                x.Minute.NumberValue,
+                x.Second.NumberValue,
+                x.Millisecond.NumberValue,
+                x.Microsecond.NumberValue));
 
-        Assert.Equal(randomDateTimes,
-            randomDateTimes.Select(x =>
-                new MaterializedDateTime(new DateTime(new Date(DateOnly.FromDateTime(x)),
-                    new Time(TimeOnly.FromDateTime(x)))).Value));
+        Assert.Equal(dateTimes, materialized);
     }
 
     [Fact]
