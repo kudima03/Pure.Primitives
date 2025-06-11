@@ -1,5 +1,4 @@
-﻿using Pure.Primitives.Char;
-using Pure.Primitives.Number;
+﻿using Pure.Primitives.Number;
 using Double = Pure.Primitives.Number.Double;
 
 namespace Pure.Primitives.Tests.Number;
@@ -9,7 +8,7 @@ public sealed record MaterializedNumberTests
     [Fact]
     public void MaterializeIntCorrectly()
     {
-        Random random = new Random();
+        System.Random random = new System.Random();
 
         IEnumerable<int> numbers = Enumerable.Range(-100, 200).ToArray();
 
@@ -22,7 +21,7 @@ public sealed record MaterializedNumberTests
     [Fact]
     public void MaterializeDoubleCorrectly()
     {
-        Random random = new Random();
+        System.Random random = new System.Random();
 
         IEnumerable<double> numbers = Enumerable.Range(0, 200).Select(_ => random.NextDouble()).ToArray();
 
@@ -35,7 +34,7 @@ public sealed record MaterializedNumberTests
     [Fact]
     public void MaterializeLongCorrectly()
     {
-        Random random = new Random();
+        System.Random random = new System.Random();
 
         IEnumerable<long> numbers = Enumerable.Range(0, 200).Select(_ => random.NextInt64()).ToArray();
 

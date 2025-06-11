@@ -1,6 +1,5 @@
 ﻿using Pure.Primitives.Abstractions.Number;
 using Decimal = Pure.Primitives.Number.Decimal;
-using Double = Pure.Primitives.Number.Double;
 
 namespace Pure.Primitives.Tests.Number;
 
