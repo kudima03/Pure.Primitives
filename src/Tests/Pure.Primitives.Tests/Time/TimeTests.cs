@@ -8,6 +8,84 @@ using Time = Primitives.Time.Time;
 public sealed record TimeTests
 {
     [Fact]
+    public void ThrowsExceptionOnInvalidHours()
+    {
+        ITime time = new Time(new UShort(24), new UShort(10));
+
+        Assert.Throws<ArgumentException>(() => time.Hour);
+        Assert.Throws<ArgumentException>(() => time.Minute);
+        Assert.Throws<ArgumentException>(() => time.Second);
+        Assert.Throws<ArgumentException>(() => time.Millisecond);
+        Assert.Throws<ArgumentException>(() => time.Microsecond);
+        Assert.Throws<ArgumentException>(() => time.Nanosecond);
+    }
+
+    [Fact]
+    public void ThrowsExceptionOnInvalidMinutes()
+    {
+        ITime time = new Time(new UShort(23), new UShort(60));
+
+        Assert.Throws<ArgumentException>(() => time.Hour);
+        Assert.Throws<ArgumentException>(() => time.Minute);
+        Assert.Throws<ArgumentException>(() => time.Second);
+        Assert.Throws<ArgumentException>(() => time.Millisecond);
+        Assert.Throws<ArgumentException>(() => time.Microsecond);
+        Assert.Throws<ArgumentException>(() => time.Nanosecond);
+    }
+
+    [Fact]
+    public void ThrowsExceptionOnInvalidSeconds()
+    {
+        ITime time = new Time(new UShort(23), new UShort(59), new UShort(60));
+
+        Assert.Throws<ArgumentException>(() => time.Hour);
+        Assert.Throws<ArgumentException>(() => time.Minute);
+        Assert.Throws<ArgumentException>(() => time.Second);
+        Assert.Throws<ArgumentException>(() => time.Millisecond);
+        Assert.Throws<ArgumentException>(() => time.Microsecond);
+        Assert.Throws<ArgumentException>(() => time.Nanosecond);
+    }
+
+    [Fact]
+    public void ThrowsExceptionOnInvalidMilliseconds()
+    {
+        ITime time = new Time(new UShort(23), new UShort(59), new UShort(59), new UShort(1000));
+
+        Assert.Throws<ArgumentException>(() => time.Hour);
+        Assert.Throws<ArgumentException>(() => time.Minute);
+        Assert.Throws<ArgumentException>(() => time.Second);
+        Assert.Throws<ArgumentException>(() => time.Millisecond);
+        Assert.Throws<ArgumentException>(() => time.Microsecond);
+        Assert.Throws<ArgumentException>(() => time.Nanosecond);
+    }
+
+    [Fact]
+    public void ThrowsExceptionOnInvalidMicroseconds()
+    {
+        ITime time = new Time(new UShort(23), new UShort(59), new UShort(59), new UShort(999), new UShort(1000));
+
+        Assert.Throws<ArgumentException>(() => time.Hour);
+        Assert.Throws<ArgumentException>(() => time.Minute);
+        Assert.Throws<ArgumentException>(() => time.Second);
+        Assert.Throws<ArgumentException>(() => time.Millisecond);
+        Assert.Throws<ArgumentException>(() => time.Microsecond);
+        Assert.Throws<ArgumentException>(() => time.Nanosecond);
+    }
+
+    [Fact]
+    public void ThrowsExceptionOnInvalidNanoseconds()
+    {
+        ITime time = new Time(new UShort(23), new UShort(59), new UShort(59), new UShort(999), new UShort(999), new UShort(1000));
+
+        Assert.Throws<ArgumentException>(() => time.Hour);
+        Assert.Throws<ArgumentException>(() => time.Minute);
+        Assert.Throws<ArgumentException>(() => time.Second);
+        Assert.Throws<ArgumentException>(() => time.Millisecond);
+        Assert.Throws<ArgumentException>(() => time.Microsecond);
+        Assert.Throws<ArgumentException>(() => time.Nanosecond);
+    }
+
+    [Fact]
     public void InitializeFromTimeOnly()
     {
         TimeOnly timeOnly = new TimeOnly(15, 31, 32, 33, 34);
