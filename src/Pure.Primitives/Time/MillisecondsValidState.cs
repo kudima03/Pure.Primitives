@@ -14,14 +14,4 @@ internal sealed record MillisecondsValidState : IBool
     }
 
     public bool BoolValue => _milliseconds.NumberValue < 1000;
-
-    public override int GetHashCode()
-    {
-        throw new NotSupportedException();
-    }
-
-    public override string ToString()
-    {
-        throw new NotSupportedException();
-    }
 }

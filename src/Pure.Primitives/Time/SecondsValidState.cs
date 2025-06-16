@@ -14,14 +14,4 @@ internal sealed record SecondsValidState : IBool
     }
 
     public bool BoolValue => _seconds.NumberValue < 60;
-
-    public override int GetHashCode()
-    {
-        throw new NotSupportedException();
-    }
-
-    public override string ToString()
-    {
-        throw new NotSupportedException();
-    }
 }

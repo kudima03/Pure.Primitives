@@ -32,14 +32,4 @@ internal sealed record TimeValidState : IBool
     }
 
     public bool BoolValue => _lazyBool.Value;
-
-    public override int GetHashCode()
-    {
-        throw new NotSupportedException();
-    }
-
-    public override string ToString()
-    {
-        throw new NotSupportedException();
-    }
 }

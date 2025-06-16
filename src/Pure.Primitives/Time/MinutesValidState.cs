@@ -15,14 +15,4 @@ internal sealed record MinutesValidState : IBool
 
 
     public bool BoolValue => _minutes.NumberValue < 60;
-
-    public override int GetHashCode()
-    {
-        throw new NotSupportedException();
-    }
-
-    public override string ToString()
-    {
-        throw new NotSupportedException();
-    }
 }

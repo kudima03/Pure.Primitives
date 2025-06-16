@@ -14,14 +14,4 @@ internal sealed record HoursValidState : IBool
     }
 
     public bool BoolValue => _hours.NumberValue < 24;
-
-    public override int GetHashCode()
-    {
-        throw new NotSupportedException();
-    }
-
-    public override string ToString()
-    {
-        throw new NotSupportedException();
-    }
 }
