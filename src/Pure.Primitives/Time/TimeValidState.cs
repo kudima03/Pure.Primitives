@@ -16,12 +16,12 @@ internal sealed record TimeValidState : IBool
         INumber<ushort> microsecond,
         INumber<ushort> nanosecond) :
         this(new Lazy<bool>(() => new IBool[]
-        { 
+        {
             new HoursValidState(hour),
             new MinutesValidState(minute),
-            new SecondsValidState(second), 
+            new SecondsValidState(second),
             new MillisecondsValidState(millisecond),
-            new MicrosecondsValidState(microsecond), 
+            new MicrosecondsValidState(microsecond),
             new NanosecondsValidState(nanosecond)
         }.All(x => x.BoolValue)))
     { }
