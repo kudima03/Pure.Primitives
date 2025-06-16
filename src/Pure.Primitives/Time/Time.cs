@@ -18,13 +18,42 @@ public sealed record Time : ITime
 
     public Time(INumber<ushort> hour,
         INumber<ushort> minute) :
-        this(hour, minute, new Zero<ushort>(), new Zero<ushort>(), new Zero<ushort>(), new Zero<ushort>())
+        this(hour,
+            minute,
+            new Zero<ushort>())
     { }
 
     public Time(INumber<ushort> hour,
         INumber<ushort> minute,
         INumber<ushort> second) :
-        this(hour, minute, second, new Zero<ushort>(), new Zero<ushort>(), new Zero<ushort>())
+        this(hour,
+            minute,
+            second,
+            new Zero<ushort>())
+    { }
+
+    public Time(INumber<ushort> hour,
+        INumber<ushort> minute,
+        INumber<ushort> second,
+        INumber<ushort> millisecond) :
+        this(hour,
+            minute,
+            second,
+            millisecond,
+            new Zero<ushort>())
+    { }
+
+    public Time(INumber<ushort> hour,
+        INumber<ushort> minute,
+        INumber<ushort> second,
+        INumber<ushort> millisecond,
+        INumber<ushort> microsecond) :
+        this(hour,
+            minute,
+            second,
+            millisecond,
+            microsecond,
+            new Zero<ushort>())
     { }
 
     public Time(INumber<ushort> hour,
@@ -42,6 +71,16 @@ public sealed record Time : ITime
         Nanosecond = nanosecond;
     }
 
+    public override int GetHashCode()
+    {
+        throw new NotSupportedException();
+    }
+
+    public override string ToString()
+    {
+        throw new NotSupportedException();
+    }
+
     public INumber<ushort> Hour { get; }
 
     public INumber<ushort> Minute { get; }
@@ -53,14 +92,4 @@ public sealed record Time : ITime
     public INumber<ushort> Microsecond { get; }
 
     public INumber<ushort> Nanosecond { get; }
-
-    public override int GetHashCode()
-    {
-        throw new NotSupportedException();
-    }
-
-    public override string ToString()
-    {
-        throw new NotSupportedException();
-    }
 }
