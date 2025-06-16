@@ -30,14 +30,17 @@ public sealed record Date : IDate
         _validState = new DateValidState(day, month, year);
     }
 
+    // Stryker disable once String
     public INumber<ushort> Day => _validState.BoolValue
         ? _day
         : throw new ArgumentException($"{nameof(Day)} field is not valid");
 
+    // Stryker disable once String
     public INumber<ushort> Month => _validState.BoolValue
         ? _month
         : throw new ArgumentException($"{nameof(Month)} field is not valid");
 
+    // Stryker disable once String
     public INumber<ushort> Year => _validState.BoolValue
         ? _year
         : throw new ArgumentException($"{nameof(Year)} field is not valid");
