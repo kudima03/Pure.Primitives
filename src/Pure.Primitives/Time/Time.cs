@@ -19,16 +19,16 @@ public sealed record Time : ITime
     public Time(INumber<ushort> hour,
         INumber<ushort> minute) :
         this(hour,
-            minute, 
+            minute,
             new Zero<ushort>())
     { }
 
     public Time(INumber<ushort> hour,
         INumber<ushort> minute,
         INumber<ushort> second) :
-        this(hour, 
-            minute, 
-            second, 
+        this(hour,
+            minute,
+            second,
             new Zero<ushort>())
     { }
 
@@ -37,8 +37,8 @@ public sealed record Time : ITime
         INumber<ushort> second,
         INumber<ushort> millisecond) :
         this(hour,
-            minute, 
-            second, 
+            minute,
+            second,
             millisecond,
             new Zero<ushort>())
     { }
@@ -48,11 +48,11 @@ public sealed record Time : ITime
         INumber<ushort> second,
         INumber<ushort> millisecond,
         INumber<ushort> microsecond) :
-        this(hour, 
-            minute, 
-            second, 
-            millisecond, 
-            microsecond, 
+        this(hour,
+            minute,
+            second,
+            millisecond,
+            microsecond,
             new Zero<ushort>())
     { }
 
