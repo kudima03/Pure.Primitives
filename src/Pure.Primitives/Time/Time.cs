@@ -86,26 +86,32 @@ public sealed record Time : ITime
         _validState = new TimeValidState(hour, minute, second, millisecond, microsecond, nanosecond);
     }
 
+    // Stryker disable once String
     public INumber<ushort> Hour => _validState.BoolValue
         ? _hour
         : throw new ArgumentException($"{nameof(Hour)} field is not valid.");
 
+    // Stryker disable once String
     public INumber<ushort> Minute => _validState.BoolValue
         ? _minute
         : throw new ArgumentException($"{nameof(Minute)} field is not valid.");
 
+    // Stryker disable once String
     public INumber<ushort> Second => _validState.BoolValue
         ? _second
         : throw new ArgumentException($"{nameof(Second)} field is not valid.");
 
+    // Stryker disable once String
     public INumber<ushort> Millisecond => _validState.BoolValue
         ? _millisecond
         : throw new ArgumentException($"{nameof(Millisecond)} field is not valid.");
 
+    // Stryker disable once String
     public INumber<ushort> Microsecond => _validState.BoolValue
         ? _microsecond
         : throw new ArgumentException($"{nameof(Microsecond)} field is not valid.");
 
+    // Stryker disable once String
     public INumber<ushort> Nanosecond => _validState.BoolValue
         ? _nanosecond
         : throw new ArgumentException($"{nameof(Nanosecond)} field is not valid.");
