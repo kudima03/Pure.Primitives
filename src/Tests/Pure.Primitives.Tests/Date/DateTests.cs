@@ -8,6 +8,33 @@ using Date = Primitives.Date.Date;
 public sealed record DateTests
 {
     [Fact]
+    public void ThrowsExceptionOnInvalidDay()
+    {
+        IDate date = new Date(new MaxUshort(), new UShort(1), new UShort(2000));
+        Assert.Throws<ArgumentException>(() => date.Year);
+        Assert.Throws<ArgumentException>(() => date.Month);
+        Assert.Throws<ArgumentException>(() => date.Day);
+    }
+
+    [Fact]
+    public void ThrowsExceptionOnInvalidMonth()
+    {
+        IDate date = new Date(new UShort(1), new MaxUshort(), new UShort(2000));
+        Assert.Throws<ArgumentException>(() => date.Year);
+        Assert.Throws<ArgumentException>(() => date.Month);
+        Assert.Throws<ArgumentException>(() => date.Day);
+    }
+
+    [Fact]
+    public void ThrowsExceptionOnInvalidYear()
+    {
+        IDate date = new Date(new UShort(1), new UShort(1), new MaxUshort());
+        Assert.Throws<ArgumentException>(() => date.Year);
+        Assert.Throws<ArgumentException>(() => date.Month);
+        Assert.Throws<ArgumentException>(() => date.Day);
+    }
+
+    [Fact]
     public void InitializeFromDateOnly()
     {
         DateOnly dateOnly = new DateOnly(2000, 1, 1);
