@@ -13,6 +13,5 @@ internal sealed record MinutesValidState : IBool
         _minutes = minutes;
     }
 
-
     public bool BoolValue => _minutes.NumberValue < 60;
 }

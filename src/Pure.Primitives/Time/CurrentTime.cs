@@ -13,9 +13,11 @@ public sealed record CurrentTime : ITime
 
     public INumber<ushort> Second { get; } = new UShort((ushort)System.DateTime.Now.Second);
 
-    public INumber<ushort> Millisecond { get; } = new UShort((ushort)System.DateTime.Now.Millisecond);
+    public INumber<ushort> Millisecond { get; } =
+        new UShort((ushort)System.DateTime.Now.Millisecond);
 
-    public INumber<ushort> Microsecond { get; } = new UShort((ushort)System.DateTime.Now.Microsecond);
+    public INumber<ushort> Microsecond { get; } =
+        new UShort((ushort)System.DateTime.Now.Microsecond);
 
     public INumber<ushort> Nanosecond { get; } = new UShort((ushort)System.DateTime.Now.Nanosecond);
 

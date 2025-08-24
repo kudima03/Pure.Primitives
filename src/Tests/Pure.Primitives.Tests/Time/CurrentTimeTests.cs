@@ -8,16 +8,22 @@ public sealed record CurrentTimeTests
     [Fact]
     public void InitializeCorrectly()
     {
-        TimeOnly time = new TimeOnly(System.DateTime.Now.Hour,
+        TimeOnly time = new TimeOnly(
+            System.DateTime.Now.Hour,
             System.DateTime.Now.Minute,
-            System.DateTime.Now.Second);
+            System.DateTime.Now.Second
+        );
 
         ITime currentTime = new CurrentTime();
 
-        Assert.Equal(time,
-            new TimeOnly(currentTime.Hour.NumberValue,
+        Assert.Equal(
+            time,
+            new TimeOnly(
+                currentTime.Hour.NumberValue,
                 currentTime.Minute.NumberValue,
-                currentTime.Second.NumberValue));
+                currentTime.Second.NumberValue
+            )
+        );
     }
 
     [Fact]

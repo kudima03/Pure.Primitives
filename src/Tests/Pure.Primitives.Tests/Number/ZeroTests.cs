@@ -11,24 +11,28 @@ public sealed record ZeroTests
         INumber<uint> primitive = new Zero<uint>();
         Assert.Equal((uint)0, primitive.NumberValue);
     }
+
     [Fact]
     public void ReturnsCorrectZeroDouble()
     {
         INumber<double> primitive = new Zero<double>();
         Assert.Equal(0, primitive.NumberValue);
     }
+
     [Fact]
     public void ReturnsCorrectZeroFloat()
     {
         INumber<float> primitive = new Zero<float>();
         Assert.Equal(0, primitive.NumberValue);
     }
+
     [Fact]
     public void ReturnsCorrectZeroUShort()
     {
         INumber<ushort> primitive = new Zero<ushort>();
         Assert.Equal((ushort)0, primitive.NumberValue);
     }
+
     [Fact]
     public void ReturnsCorrectZeroInt()
     {

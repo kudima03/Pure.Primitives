@@ -32,8 +32,11 @@ public sealed record UlidTests
             await Task.Delay(1);
         }
 
-        Assert.True(values.Select(x => x.orderNumber)
-            .SequenceEqual(values.OrderBy(x => x.ulid.GuidValue).Select(x => x.orderNumber)));
+        Assert.True(
+            values
+                .Select(x => x.orderNumber)
+                .SequenceEqual(values.OrderBy(x => x.ulid.GuidValue).Select(x => x.orderNumber))
+        );
     }
 
     [Fact]

@@ -9,21 +9,27 @@ internal sealed record TimeValidState : IBool
 {
     private readonly Lazy<bool> _lazyBool;
 
-    public TimeValidState(INumber<ushort> hour,
+    public TimeValidState(
+        INumber<ushort> hour,
         INumber<ushort> minute,
         INumber<ushort> second,
         INumber<ushort> millisecond,
         INumber<ushort> microsecond,
-        INumber<ushort> nanosecond) :
-        this(new Lazy<bool>(() => new IBool[]
-        {
-            new HoursValidState(hour),
-            new MinutesValidState(minute),
-            new SecondsValidState(second),
-            new MillisecondsValidState(millisecond),
-            new MicrosecondsValidState(microsecond),
-            new NanosecondsValidState(nanosecond)
-        }.All(x => x.BoolValue)))
+        INumber<ushort> nanosecond
+    )
+        : this(
+            new Lazy<bool>(() =>
+                new IBool[]
+                {
+                    new HoursValidState(hour),
+                    new MinutesValidState(minute),
+                    new SecondsValidState(second),
+                    new MillisecondsValidState(millisecond),
+                    new MicrosecondsValidState(microsecond),
+                    new NanosecondsValidState(nanosecond),
+                }.All(x => x.BoolValue)
+            )
+        )
     { }
 
     private TimeValidState(Lazy<bool> value)

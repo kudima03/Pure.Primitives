@@ -16,12 +16,16 @@ public sealed record FloatTests
     [Fact]
     public void ThrowExceptionOnGetHashCode()
     {
-        Assert.Throws<NotSupportedException>(() => new Float(0.187946582364598632987465F).GetHashCode());
+        Assert.Throws<NotSupportedException>(() =>
+            new Float(0.187946582364598632987465F).GetHashCode()
+        );
     }
 
     [Fact]
     public void ThrowExceptionOnToString()
     {
-        Assert.Throws<NotSupportedException>(() => new Float(0.9876123479612978365971267F).ToString());
+        Assert.Throws<NotSupportedException>(() =>
+            new Float(0.9876123479612978365971267F).ToString()
+        );
     }
 }
