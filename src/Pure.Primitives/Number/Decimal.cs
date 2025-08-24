@@ -10,12 +10,6 @@ public sealed record Decimal : INumber<decimal>
     public Decimal(decimal value)
         : this(new Lazy<decimal>(() => value)) { }
 
-    public Decimal(INumber<double> value)
-        : this(new Lazy<decimal>(() => Convert.ToDecimal(value.NumberValue))) { }
-
-    public Decimal(INumber<float> value)
-        : this(new Lazy<decimal>(() => Convert.ToDecimal(value.NumberValue))) { }
-
     public Decimal(INumber<long> value)
         : this(new Lazy<decimal>(() => Convert.ToDecimal(value.NumberValue))) { }
 
