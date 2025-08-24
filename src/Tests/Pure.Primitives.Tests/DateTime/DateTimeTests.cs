@@ -19,16 +19,17 @@ public sealed record DateTimeTests
 
         Assert.Equal(
             new System.DateTime(dateOnly, timeOnly),
-            new System.DateTime(new DateOnly(
-                    date.Year.NumberValue,
-                    date.Month.NumberValue,
-                    date.Day.NumberValue),
+            new System.DateTime(
+                new DateOnly(date.Year.NumberValue, date.Month.NumberValue, date.Day.NumberValue),
                 new TimeOnly(
                     date.Hour.NumberValue,
                     date.Minute.NumberValue,
                     date.Second.NumberValue,
                     date.Millisecond.NumberValue,
-                    date.Microsecond.NumberValue)));
+                    date.Microsecond.NumberValue
+                )
+            )
+        );
     }
 
     [Fact]
@@ -38,20 +39,25 @@ public sealed record DateTimeTests
 
         IDateTime date = new DateTime(new Date(dateOnly));
 
-        Assert.Equal(dateOnly, new DateOnly(date.Year.NumberValue,
-            date.Month.NumberValue,
-            date.Day.NumberValue));
+        Assert.Equal(
+            dateOnly,
+            new DateOnly(date.Year.NumberValue, date.Month.NumberValue, date.Day.NumberValue)
+        );
     }
 
     [Fact]
     public void ThrowExceptionOnGetHashCode()
     {
-        Assert.Throws<NotSupportedException>(() => new DateTime(new Date(DateOnly.MaxValue)).GetHashCode());
+        Assert.Throws<NotSupportedException>(() =>
+            new DateTime(new Date(DateOnly.MaxValue)).GetHashCode()
+        );
     }
 
     [Fact]
     public void ThrowExceptionOnToString()
     {
-        Assert.Throws<NotSupportedException>(() => new DateTime(new Date(DateOnly.MaxValue)).ToString());
+        Assert.Throws<NotSupportedException>(() =>
+            new DateTime(new Date(DateOnly.MaxValue)).ToString()
+        );
     }
 }

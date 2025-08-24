@@ -7,7 +7,8 @@ public sealed record Ulid : IGuid
 {
     private readonly System.Guid _value;
 
-    public Ulid() : this(System.Guid.CreateVersion7()) { }
+    public Ulid()
+        : this(System.Guid.CreateVersion7()) { }
 
     public Ulid(System.Guid value)
     {

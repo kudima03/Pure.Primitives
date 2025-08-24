@@ -10,16 +10,17 @@ public sealed record CurrentDateTimeTests
     {
         IDateTime date = new CurrentDateTime();
 
-        Assert.Equal(System.DateTime.Parse(System.DateTime.Now.ToString("s")),
+        Assert.Equal(
+            System.DateTime.Parse(System.DateTime.Now.ToString("s")),
             new System.DateTime(
-                new DateOnly(
-                    date.Year.NumberValue,
-                    date.Month.NumberValue,
-                    date.Day.NumberValue),
+                new DateOnly(date.Year.NumberValue, date.Month.NumberValue, date.Day.NumberValue),
                 new TimeOnly(
                     date.Hour.NumberValue,
                     date.Minute.NumberValue,
-                    date.Second.NumberValue)));
+                    date.Second.NumberValue
+                )
+            )
+        );
     }
 
     [Fact]

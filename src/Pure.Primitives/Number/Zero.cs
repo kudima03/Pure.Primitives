@@ -3,7 +3,8 @@ using System;
 
 namespace Pure.Primitives.Number;
 
-public sealed record Zero<T> : INumber<T> where T : System.Numerics.INumber<T>
+public sealed record Zero<T> : INumber<T>
+    where T : System.Numerics.INumber<T>
 {
     public T NumberValue => T.Zero;
 

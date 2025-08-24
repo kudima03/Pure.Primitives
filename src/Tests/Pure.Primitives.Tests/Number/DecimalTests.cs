@@ -15,12 +15,16 @@ public sealed record DecimalTests
     [Fact]
     public void ThrowExceptionOnGetHashCode()
     {
-        Assert.Throws<NotSupportedException>(() => new Decimal(0.187946582364598632987465M).GetHashCode());
+        Assert.Throws<NotSupportedException>(() =>
+            new Decimal(0.187946582364598632987465M).GetHashCode()
+        );
     }
 
     [Fact]
     public void ThrowExceptionOnToString()
     {
-        Assert.Throws<NotSupportedException>(() => new Decimal(0.9876123479612978365971267M).ToString());
+        Assert.Throws<NotSupportedException>(() =>
+            new Decimal(0.9876123479612978365971267M).ToString()
+        );
     }
 }

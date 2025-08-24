@@ -10,8 +10,10 @@ public sealed record CurrentDateTests
     {
         IDate date = new CurrentDate();
 
-        Assert.Equal(DateOnly.FromDateTime(System.DateTime.Today),
-            new DateOnly(date.Year.NumberValue, date.Month.NumberValue, date.Day.NumberValue));
+        Assert.Equal(
+            DateOnly.FromDateTime(System.DateTime.Today),
+            new DateOnly(date.Year.NumberValue, date.Month.NumberValue, date.Day.NumberValue)
+        );
     }
 
     [Fact]

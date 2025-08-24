@@ -17,12 +17,16 @@ public sealed record DoubleTests
     [Fact]
     public void ThrowExceptionOnGetHashCode()
     {
-        Assert.Throws<NotSupportedException>(() => new Double(0.187946582364598632987465).GetHashCode());
+        Assert.Throws<NotSupportedException>(() =>
+            new Double(0.187946582364598632987465).GetHashCode()
+        );
     }
 
     [Fact]
     public void ThrowExceptionOnToString()
     {
-        Assert.Throws<NotSupportedException>(() => new Double(0.9876123479612978365971267).ToString());
+        Assert.Throws<NotSupportedException>(() =>
+            new Double(0.9876123479612978365971267).ToString()
+        );
     }
 }
