@@ -41,7 +41,10 @@ public sealed record DateTests
 
         IDate date = new Date(dateOnly);
 
-        Assert.Equal(dateOnly, new DateOnly(date.Year.NumberValue, date.Month.NumberValue, date.Day.NumberValue));
+        Assert.Equal(
+            dateOnly,
+            new DateOnly(date.Year.NumberValue, date.Month.NumberValue, date.Day.NumberValue)
+        );
     }
 
     [Fact]
@@ -52,22 +55,28 @@ public sealed record DateTests
         IDate date = new Date(
             new UShort((ushort)dateOnly.Day),
             new UShort((ushort)dateOnly.Month),
-            new UShort((ushort)dateOnly.Year));
+            new UShort((ushort)dateOnly.Year)
+        );
 
-        Assert.Equal(dateOnly, new DateOnly(date.Year.NumberValue, date.Month.NumberValue, date.Day.NumberValue));
+        Assert.Equal(
+            dateOnly,
+            new DateOnly(date.Year.NumberValue, date.Month.NumberValue, date.Day.NumberValue)
+        );
     }
 
     [Fact]
     public void ThrowExceptionOnGetHashCode()
     {
         Assert.Throws<NotSupportedException>(() =>
-            new Date(new UShort(1), new UShort(1), new UShort(2000)).GetHashCode());
+            new Date(new UShort(1), new UShort(1), new UShort(2000)).GetHashCode()
+        );
     }
 
     [Fact]
     public void ThrowExceptionOnToString()
     {
         Assert.Throws<NotSupportedException>(() =>
-            new Date(new UShort(1), new UShort(1), new UShort(2000)).ToString());
+            new Date(new UShort(1), new UShort(1), new UShort(2000)).ToString()
+        );
     }
 }

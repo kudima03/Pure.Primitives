@@ -62,7 +62,13 @@ public sealed record TimeTests
     [Fact]
     public void ThrowsExceptionOnInvalidMicroseconds()
     {
-        ITime time = new Time(new UShort(23), new UShort(59), new UShort(59), new UShort(999), new UShort(1000));
+        ITime time = new Time(
+            new UShort(23),
+            new UShort(59),
+            new UShort(59),
+            new UShort(999),
+            new UShort(1000)
+        );
 
         Assert.Throws<ArgumentException>(() => time.Hour);
         Assert.Throws<ArgumentException>(() => time.Minute);
@@ -75,7 +81,14 @@ public sealed record TimeTests
     [Fact]
     public void ThrowsExceptionOnInvalidNanoseconds()
     {
-        ITime time = new Time(new UShort(23), new UShort(59), new UShort(59), new UShort(999), new UShort(999), new UShort(1000));
+        ITime time = new Time(
+            new UShort(23),
+            new UShort(59),
+            new UShort(59),
+            new UShort(999),
+            new UShort(999),
+            new UShort(1000)
+        );
 
         Assert.Throws<ArgumentException>(() => time.Hour);
         Assert.Throws<ArgumentException>(() => time.Minute);
@@ -92,12 +105,16 @@ public sealed record TimeTests
 
         ITime time = new Time(timeOnly);
 
-        Assert.Equal(timeOnly,
-            new TimeOnly(time.Hour.NumberValue,
+        Assert.Equal(
+            timeOnly,
+            new TimeOnly(
+                time.Hour.NumberValue,
                 time.Minute.NumberValue,
                 time.Second.NumberValue,
                 time.Millisecond.NumberValue,
-                time.Microsecond.NumberValue));
+                time.Microsecond.NumberValue
+            )
+        );
 
         Assert.Equal(timeOnly.Nanosecond, time.Nanosecond.NumberValue);
     }
@@ -107,18 +124,25 @@ public sealed record TimeTests
     {
         TimeOnly timeOnly = new TimeOnly(15, 31, 32, 33, 34);
 
-        ITime time = new Time(new UShort((ushort)timeOnly.Hour),
+        ITime time = new Time(
+            new UShort((ushort)timeOnly.Hour),
             new UShort((ushort)timeOnly.Minute),
             new UShort((ushort)timeOnly.Second),
             new UShort((ushort)timeOnly.Millisecond),
             new UShort((ushort)timeOnly.Microsecond),
-            new UShort((ushort)timeOnly.Nanosecond));
+            new UShort((ushort)timeOnly.Nanosecond)
+        );
 
-        Assert.Equal(timeOnly, new TimeOnly(time.Hour.NumberValue,
-            time.Minute.NumberValue,
-            time.Second.NumberValue,
-            time.Millisecond.NumberValue,
-            time.Microsecond.NumberValue));
+        Assert.Equal(
+            timeOnly,
+            new TimeOnly(
+                time.Hour.NumberValue,
+                time.Minute.NumberValue,
+                time.Second.NumberValue,
+                time.Millisecond.NumberValue,
+                time.Microsecond.NumberValue
+            )
+        );
 
         Assert.Equal(timeOnly.Nanosecond, time.Nanosecond.NumberValue);
     }
@@ -128,26 +152,31 @@ public sealed record TimeTests
     {
         TimeOnly timeOnly = new TimeOnly(15, 31, 32);
 
-        ITime time = new Time(new UShort((ushort)timeOnly.Hour),
+        ITime time = new Time(
+            new UShort((ushort)timeOnly.Hour),
             new UShort((ushort)timeOnly.Minute),
-            new UShort((ushort)timeOnly.Second));
+            new UShort((ushort)timeOnly.Second)
+        );
 
-        Assert.Equal(timeOnly, new TimeOnly(time.Hour.NumberValue,
-            time.Minute.NumberValue,
-            time.Second.NumberValue));
+        Assert.Equal(
+            timeOnly,
+            new TimeOnly(time.Hour.NumberValue, time.Minute.NumberValue, time.Second.NumberValue)
+        );
     }
 
     [Fact]
     public void ThrowExceptionOnGetHashCode()
     {
         Assert.Throws<NotSupportedException>(() =>
-            new Time(new UShort(1), new UShort(1), new UShort(2000)).GetHashCode());
+            new Time(new UShort(1), new UShort(1), new UShort(2000)).GetHashCode()
+        );
     }
 
     [Fact]
     public void ThrowExceptionOnToString()
     {
         Assert.Throws<NotSupportedException>(() =>
-            new Time(new UShort(1), new UShort(1), new UShort(2000)).ToString());
+            new Time(new UShort(1), new UShort(1), new UShort(2000)).ToString()
+        );
     }
 }
