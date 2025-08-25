@@ -5,14 +5,35 @@ namespace Pure.Primitives.Number;
 
 public sealed record Float : INumber<float>
 {
-    private readonly float _value;
+    private readonly Lazy<float> _lazyValue;
 
     public Float(float value)
+        : this(new Lazy<float>(() => value)) { }
+
+    public Float(INumber<ulong> value)
+        : this(new Lazy<float>(() => Convert.ToSingle(value.NumberValue))) { }
+
+    public Float(INumber<long> value)
+        : this(new Lazy<float>(() => Convert.ToSingle(value.NumberValue))) { }
+
+    public Float(INumber<uint> value)
+        : this(new Lazy<float>(() => Convert.ToSingle(value.NumberValue))) { }
+
+    public Float(INumber<int> value)
+        : this(new Lazy<float>(() => Convert.ToSingle(value.NumberValue))) { }
+
+    public Float(INumber<ushort> value)
+        : this(new Lazy<float>(() => Convert.ToSingle(value.NumberValue))) { }
+
+    public Float(INumber<short> value)
+        : this(new Lazy<float>(() => Convert.ToSingle(value.NumberValue))) { }
+
+    private Float(Lazy<float> lazyValue)
     {
-        _value = value;
+        _lazyValue = lazyValue;
     }
 
-    float INumber<float>.NumberValue => _value;
+    float INumber<float>.NumberValue => _lazyValue.Value;
 
     public override int GetHashCode()
     {
