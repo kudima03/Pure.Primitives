@@ -14,25 +14,25 @@ public sealed record Double : INumber<double>
         : this(new Lazy<double>(() => Convert.ToDouble(value.NumberValue))) { }
 
     public Double(INumber<float> value)
-        : this(new Lazy<double>(() => Convert.ToDouble(value.NumberValue))) { }
+        : this(new Lazy<double>(() => value.NumberValue)) { }
 
     public Double(INumber<ulong> value)
-        : this(new Lazy<double>(() => Convert.ToDouble(value.NumberValue))) { }
+        : this(new Lazy<double>(() => value.NumberValue)) { }
 
     public Double(INumber<long> value)
-        : this(new Lazy<double>(() => Convert.ToDouble(value.NumberValue))) { }
+        : this(new Lazy<double>(() => value.NumberValue)) { }
 
     public Double(INumber<uint> value)
-        : this(new Lazy<double>(() => Convert.ToDouble(value.NumberValue))) { }
+        : this(new Lazy<double>(() => value.NumberValue)) { }
 
     public Double(INumber<int> value)
-        : this(new Lazy<double>(() => Convert.ToDouble(value.NumberValue))) { }
+        : this(new Lazy<double>(() => value.NumberValue)) { }
 
     public Double(INumber<ushort> value)
-        : this(new Lazy<double>(() => Convert.ToDouble(value.NumberValue))) { }
+        : this(new Lazy<double>(() => value.NumberValue)) { }
 
     public Double(INumber<short> value)
-        : this(new Lazy<double>(() => Convert.ToDouble(value.NumberValue))) { }
+        : this(new Lazy<double>(() => value.NumberValue)) { }
 
     private Double(Lazy<double> lazyValue)
     {
