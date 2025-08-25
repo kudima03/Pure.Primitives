@@ -11,22 +11,22 @@ public sealed record Decimal : INumber<decimal>
         : this(new Lazy<decimal>(() => value)) { }
 
     public Decimal(INumber<long> value)
-        : this(new Lazy<decimal>(() => Convert.ToDecimal(value.NumberValue))) { }
+        : this(new Lazy<decimal>(() => value.NumberValue)) { }
 
     public Decimal(INumber<ulong> value)
-        : this(new Lazy<decimal>(() => Convert.ToDecimal(value.NumberValue))) { }
+        : this(new Lazy<decimal>(() => value.NumberValue)) { }
 
     public Decimal(INumber<uint> value)
-        : this(new Lazy<decimal>(() => Convert.ToDecimal(value.NumberValue))) { }
+        : this(new Lazy<decimal>(() => value.NumberValue)) { }
 
     public Decimal(INumber<int> value)
-        : this(new Lazy<decimal>(() => Convert.ToDecimal(value.NumberValue))) { }
+        : this(new Lazy<decimal>(() => value.NumberValue)) { }
 
     public Decimal(INumber<short> value)
-        : this(new Lazy<decimal>(() => Convert.ToDecimal(value.NumberValue))) { }
+        : this(new Lazy<decimal>(() => value.NumberValue)) { }
 
     public Decimal(INumber<ushort> value)
-        : this(new Lazy<decimal>(() => Convert.ToDecimal(value.NumberValue))) { }
+        : this(new Lazy<decimal>(() => value.NumberValue)) { }
 
     private Decimal(Lazy<decimal> lazyValue)
     {
