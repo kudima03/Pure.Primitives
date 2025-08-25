@@ -12,22 +12,22 @@ public sealed record DoubleTests
     {
         INumber<double> doublePrimitive = new Double(new MaxUshort());
         Assert.Equal(ushort.MaxValue, doublePrimitive.NumberValue);
-    }  
-    
+    }
+
     [Fact]
     public void InitializeFromFloatConstructor()
     {
         INumber<double> doublePrimitive = new Double(new MaxFloat());
         Assert.Equal(float.MaxValue, doublePrimitive.NumberValue);
     }
-    
+
     [Fact]
     public void InitializeFromUlongConstructor()
     {
         INumber<double> doublePrimitive = new Double(new MaxUlong());
         Assert.Equal(ulong.MaxValue, doublePrimitive.NumberValue);
     }
-    
+
     [Fact]
     public void InitializeFromShortConstructor()
     {
