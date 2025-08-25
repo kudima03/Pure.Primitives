@@ -9,35 +9,42 @@ public sealed record DecimalTests
     [Fact]
     public void InitializeFromShortConstructor()
     {
-        INumber<decimal> doublePrimitive = new Decimal(new Int(short.MaxValue));
+        INumber<decimal> doublePrimitive = new Decimal(new MaxShort());
         Assert.Equal(short.MaxValue, doublePrimitive.NumberValue);
     }
 
     [Fact]
     public void InitializeFromUShortConstructor()
     {
-        INumber<decimal> doublePrimitive = new Decimal(new Int(ushort.MaxValue));
+        INumber<decimal> doublePrimitive = new Decimal(new MaxUshort());
         Assert.Equal(ushort.MaxValue, doublePrimitive.NumberValue);
     }
 
     [Fact]
     public void InitializeFromIntConstructor()
     {
-        INumber<decimal> doublePrimitive = new Decimal(new Int(int.MaxValue));
+        INumber<decimal> doublePrimitive = new Decimal(new MaxInt());
         Assert.Equal(int.MaxValue, doublePrimitive.NumberValue);
     }
 
     [Fact]
     public void InitializeFromUIntConstructor()
     {
-        INumber<decimal> doublePrimitive = new Decimal(new UInt(uint.MaxValue));
+        INumber<decimal> doublePrimitive = new Decimal(new MaxUint());
         Assert.Equal(uint.MaxValue, doublePrimitive.NumberValue);
+    }
+
+    [Fact]
+    public void InitializeFromULongConstructor()
+    {
+        INumber<decimal> doublePrimitive = new Decimal(new MaxUlong());
+        Assert.Equal(ulong.MaxValue, doublePrimitive.NumberValue);
     }
 
     [Fact]
     public void InitializeFromLongConstructor()
     {
-        INumber<decimal> doublePrimitive = new Decimal(new Long(long.MaxValue));
+        INumber<decimal> doublePrimitive = new Decimal(new MaxLong());
         Assert.Equal(long.MaxValue, doublePrimitive.NumberValue);
     }
 

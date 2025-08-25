@@ -6,6 +6,13 @@ namespace Pure.Primitives.Tests.Number;
 public sealed record LongTests
 {
     [Fact]
+    public void InitializeFromShortConstructor()
+    {
+        INumber<long> primitive = new Long(new MaxShort());
+        Assert.Equal(short.MaxValue, primitive.NumberValue);
+    }
+
+    [Fact]
     public void InitializeFromUShortConstructor()
     {
         INumber<long> primitive = new Long(new MaxUshort());

@@ -8,17 +8,31 @@ using Double = Primitives.Number.Double;
 public sealed record DoubleTests
 {
     [Fact]
-    public void InitializeFromShortConstructor()
+    public void InitializeFromUShortConstructor()
     {
         INumber<double> doublePrimitive = new Double(new MaxUshort());
         Assert.Equal(ushort.MaxValue, doublePrimitive.NumberValue);
-    }
-
+    }  
+    
     [Fact]
-    public void InitializeFromUShortConstructor()
+    public void InitializeFromFloatConstructor()
     {
-        INumber<double> doublePrimitive = new Double(new Int(ushort.MaxValue));
-        Assert.Equal(ushort.MaxValue, doublePrimitive.NumberValue);
+        INumber<double> doublePrimitive = new Double(new MaxFloat());
+        Assert.Equal(float.MaxValue, doublePrimitive.NumberValue);
+    }
+    
+    [Fact]
+    public void InitializeFromUlongConstructor()
+    {
+        INumber<double> doublePrimitive = new Double(new MaxUlong());
+        Assert.Equal(ulong.MaxValue, doublePrimitive.NumberValue);
+    }
+    
+    [Fact]
+    public void InitializeFromShortConstructor()
+    {
+        INumber<double> doublePrimitive = new Double(new MaxShort());
+        Assert.Equal(short.MaxValue, doublePrimitive.NumberValue);
     }
 
     [Fact]

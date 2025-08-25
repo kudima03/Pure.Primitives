@@ -8,14 +8,14 @@ public sealed record FloatTests
     [Fact]
     public void InitializeFromShortConstructor()
     {
-        INumber<float> primitive = new Float(new MaxUshort());
-        Assert.Equal(ushort.MaxValue, primitive.NumberValue);
+        INumber<float> primitive = new Float(new MaxShort());
+        Assert.Equal(short.MaxValue, primitive.NumberValue);
     }
 
     [Fact]
     public void InitializeFromUShortConstructor()
     {
-        INumber<float> primitive = new Float(new Int(ushort.MaxValue));
+        INumber<float> primitive = new Float(new MaxUshort());
         Assert.Equal(ushort.MaxValue, primitive.NumberValue);
     }
 
@@ -38,6 +38,13 @@ public sealed record FloatTests
     {
         INumber<float> primitive = new Float(new MaxLong());
         Assert.Equal(long.MaxValue, primitive.NumberValue);
+    }
+
+    [Fact]
+    public void InitializeFromULongConstructor()
+    {
+        INumber<float> primitive = new Float(new MaxUlong());
+        Assert.Equal(ulong.MaxValue, primitive.NumberValue);
     }
 
     [Fact]
