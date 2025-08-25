@@ -5,14 +5,23 @@ namespace Pure.Primitives.Number;
 
 public sealed record Int : INumber<int>
 {
-    private readonly int _value;
+    private readonly Lazy<int> _lazyValue;
 
     public Int(int value)
+        : this(new Lazy<int>(() => value)) { }
+
+    public Int(INumber<ushort> value)
+        : this(new Lazy<int>(() => value.NumberValue)) { }
+
+    public Int(INumber<short> value)
+        : this(new Lazy<int>(() => value.NumberValue)) { }
+
+    private Int(Lazy<int> lazyValue)
     {
-        _value = value;
+        _lazyValue = lazyValue;
     }
 
-    int INumber<int>.NumberValue => _value;
+    int INumber<int>.NumberValue => _lazyValue.Value;
 
     public override int GetHashCode()
     {

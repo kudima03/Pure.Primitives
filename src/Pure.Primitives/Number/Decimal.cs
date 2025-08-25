@@ -5,14 +5,35 @@ namespace Pure.Primitives.Number;
 
 public sealed record Decimal : INumber<decimal>
 {
-    private readonly decimal _value;
+    private readonly Lazy<decimal> _lazyValue;
 
     public Decimal(decimal value)
+        : this(new Lazy<decimal>(() => value)) { }
+
+    public Decimal(INumber<long> value)
+        : this(new Lazy<decimal>(() => value.NumberValue)) { }
+
+    public Decimal(INumber<ulong> value)
+        : this(new Lazy<decimal>(() => value.NumberValue)) { }
+
+    public Decimal(INumber<uint> value)
+        : this(new Lazy<decimal>(() => value.NumberValue)) { }
+
+    public Decimal(INumber<int> value)
+        : this(new Lazy<decimal>(() => value.NumberValue)) { }
+
+    public Decimal(INumber<short> value)
+        : this(new Lazy<decimal>(() => value.NumberValue)) { }
+
+    public Decimal(INumber<ushort> value)
+        : this(new Lazy<decimal>(() => value.NumberValue)) { }
+
+    private Decimal(Lazy<decimal> lazyValue)
     {
-        _value = value;
+        _lazyValue = lazyValue;
     }
 
-    decimal INumber<decimal>.NumberValue => _value;
+    decimal INumber<decimal>.NumberValue => _lazyValue.Value;
 
     public override int GetHashCode()
     {
