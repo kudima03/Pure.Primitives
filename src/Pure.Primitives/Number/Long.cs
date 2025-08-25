@@ -11,16 +11,16 @@ public sealed record Long : INumber<long>
         : this(new Lazy<long>(() => value)) { }
 
     public Long(INumber<uint> value)
-        : this(new Lazy<long>(() => Convert.ToInt64(value.NumberValue))) { }
+        : this(new Lazy<long>(() => value.NumberValue)) { }
 
     public Long(INumber<int> value)
-        : this(new Lazy<long>(() => Convert.ToInt64(value.NumberValue))) { }
+        : this(new Lazy<long>(() => value.NumberValue)) { }
 
     public Long(INumber<ushort> value)
-        : this(new Lazy<long>(() => Convert.ToInt64(value.NumberValue))) { }
+        : this(new Lazy<long>(() => value.NumberValue)) { }
 
     public Long(INumber<short> value)
-        : this(new Lazy<long>(() => Convert.ToInt64(value.NumberValue))) { }
+        : this(new Lazy<long>(() => value.NumberValue)) { }
 
     private Long(Lazy<long> lazyValue)
     {
