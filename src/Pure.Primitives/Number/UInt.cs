@@ -11,7 +11,7 @@ public sealed record UInt : INumber<uint>
         : this(new Lazy<uint>(() => value)) { }
 
     public UInt(INumber<ushort> value)
-        : this(new Lazy<uint>(() => Convert.ToUInt32(value.NumberValue))) { }
+        : this(new Lazy<uint>(() => value.NumberValue)) { }
 
     private UInt(Lazy<uint> lazyValue)
     {
