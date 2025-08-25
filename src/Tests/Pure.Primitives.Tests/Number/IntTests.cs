@@ -9,7 +9,7 @@ public sealed record IntTests
     public void InitializeFromShortConstructor()
     {
         INumber<int> primitive = new Int(short.MaxValue);
-        Assert.Equal(ushort.MaxValue, primitive.NumberValue);
+        Assert.Equal(short.MaxValue, primitive.NumberValue);
     }
 
     [Fact]
