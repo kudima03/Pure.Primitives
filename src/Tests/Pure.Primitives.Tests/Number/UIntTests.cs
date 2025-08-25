@@ -6,6 +6,13 @@ namespace Pure.Primitives.Tests.Number;
 public sealed record UIntTests
 {
     [Fact]
+    public void InitializeFromUShortConstructor()
+    {
+        INumber<uint> primitive = new UInt(new MaxUshort());
+        Assert.Equal(ushort.MaxValue, primitive.NumberValue);
+    }
+
+    [Fact]
     public void InitializeFromScalarConstructor()
     {
         const uint testValue = 3910283761;
