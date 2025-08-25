@@ -11,10 +11,10 @@ public sealed record Int : INumber<int>
         : this(new Lazy<int>(() => value)) { }
 
     public Int(INumber<ushort> value)
-        : this(new Lazy<int>(() => Convert.ToInt32(value.NumberValue))) { }
+        : this(new Lazy<int>(() => value.NumberValue)) { }
 
     public Int(INumber<short> value)
-        : this(new Lazy<int>(() => Convert.ToInt32(value.NumberValue))) { }
+        : this(new Lazy<int>(() => value.NumberValue)) { }
 
     private Int(Lazy<int> lazyValue)
     {
