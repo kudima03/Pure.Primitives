@@ -7,7 +7,7 @@
     <InternalsVisibleTo Include="Pure.Primitives.Tests" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Pure.Primitives.Abstractions" Version="4.0.6" />
+    <PackageReference Include="Pure.Primitives.Abstractions" Version="4.0.8" />
   </ItemGroup>
   <PropertyGroup>
     <PackageId>Pure.Primitives</PackageId>
