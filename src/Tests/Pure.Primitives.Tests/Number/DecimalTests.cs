@@ -1,4 +1,4 @@
-﻿using Pure.Primitives.Abstractions.Number;
+using Pure.Primitives.Abstractions.Number;
 using Pure.Primitives.Number;
 using Decimal = Pure.Primitives.Number.Decimal;
 
@@ -58,7 +58,7 @@ public sealed record DecimalTests
     [Fact]
     public void ThrowExceptionOnGetHashCode()
     {
-        Assert.Throws<NotSupportedException>(() =>
+        _ = Assert.Throws<NotSupportedException>(() =>
             new Decimal(0.187946582364598632987465M).GetHashCode()
         );
     }
@@ -66,7 +66,7 @@ public sealed record DecimalTests
     [Fact]
     public void ThrowExceptionOnToString()
     {
-        Assert.Throws<NotSupportedException>(() =>
+        _ = Assert.Throws<NotSupportedException>(() =>
             new Decimal(0.9876123479612978365971267M).ToString()
         );
     }

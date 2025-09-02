@@ -1,4 +1,4 @@
-﻿using Pure.Primitives.Abstractions.Guid;
+using Pure.Primitives.Abstractions.Guid;
 
 namespace Pure.Primitives.Tests.Guid;
 
@@ -18,7 +18,9 @@ public sealed record GuidTests
     public void InitializeFromEmptyConstructor()
     {
         IGuid guidPrimitive = new Guid();
-        Assert.True(System.Guid.TryParse(guidPrimitive.GuidValue.ToString(), out System.Guid _));
+        Assert.True(
+            System.Guid.TryParse(guidPrimitive.GuidValue.ToString(), out System.Guid _)
+        );
     }
 
     [Fact]
@@ -31,12 +33,12 @@ public sealed record GuidTests
     [Fact]
     public void ThrowExceptionOnGetHashCode()
     {
-        Assert.Throws<NotSupportedException>(() => new Guid().GetHashCode());
+        _ = Assert.Throws<NotSupportedException>(() => new Guid().GetHashCode());
     }
 
     [Fact]
     public void ThrowExceptionOnToString()
     {
-        Assert.Throws<NotSupportedException>(() => new Guid().ToString());
+        _ = Assert.Throws<NotSupportedException>(() => new Guid().ToString());
     }
 }

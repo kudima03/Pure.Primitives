@@ -1,5 +1,5 @@
-﻿using Pure.Primitives.Abstractions.Bool;
 using System;
+using Pure.Primitives.Abstractions.Bool;
 
 namespace Pure.Primitives.Bool;
 

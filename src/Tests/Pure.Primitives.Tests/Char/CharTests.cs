@@ -1,4 +1,4 @@
-﻿using Pure.Primitives.Abstractions.Char;
+using Pure.Primitives.Abstractions.Char;
 
 namespace Pure.Primitives.Tests.Char;
 
@@ -17,12 +17,12 @@ public sealed record CharTests
     [Fact]
     public void ThrowExceptionOnGetHashCode()
     {
-        Assert.Throws<NotSupportedException>(() => new Char('X').GetHashCode());
+        _ = Assert.Throws<NotSupportedException>(() => new Char('X').GetHashCode());
     }
 
     [Fact]
     public void ThrowExceptionOnToString()
     {
-        Assert.Throws<NotSupportedException>(() => new Char('X').ToString());
+        _ = Assert.Throws<NotSupportedException>(() => new Char('X').ToString());
     }
 }

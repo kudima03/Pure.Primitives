@@ -1,4 +1,4 @@
-﻿using Pure.Primitives.Abstractions.Number;
+using Pure.Primitives.Abstractions.Number;
 using Pure.Primitives.Number;
 
 namespace Pure.Primitives.Tests.Number;
@@ -44,12 +44,16 @@ public sealed record LongTests
     [Fact]
     public void ThrowExceptionOnGetHashCode()
     {
-        Assert.Throws<NotSupportedException>(() => new Long(18459863293736745).GetHashCode());
+        _ = Assert.Throws<NotSupportedException>(() =>
+            new Long(18459863293736745).GetHashCode()
+        );
     }
 
     [Fact]
     public void ThrowExceptionOnToString()
     {
-        Assert.Throws<NotSupportedException>(() => new Long(36597126725373475).ToString());
+        _ = Assert.Throws<NotSupportedException>(() =>
+            new Long(36597126725373475).ToString()
+        );
     }
 }

@@ -1,4 +1,4 @@
-﻿using Pure.Primitives.Abstractions.Number;
+using Pure.Primitives.Abstractions.Number;
 using Pure.Primitives.Number;
 
 namespace Pure.Primitives.Tests.Number;
@@ -74,7 +74,7 @@ public sealed record DoubleTests
     [Fact]
     public void ThrowExceptionOnGetHashCode()
     {
-        Assert.Throws<NotSupportedException>(() =>
+        _ = Assert.Throws<NotSupportedException>(() =>
             new Double(0.187946582364598632987465).GetHashCode()
         );
     }
@@ -82,7 +82,7 @@ public sealed record DoubleTests
     [Fact]
     public void ThrowExceptionOnToString()
     {
-        Assert.Throws<NotSupportedException>(() =>
+        _ = Assert.Throws<NotSupportedException>(() =>
             new Double(0.9876123479612978365971267).ToString()
         );
     }

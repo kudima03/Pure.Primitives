@@ -1,7 +1,7 @@
-﻿using Pure.Primitives.Abstractions.Char;
+using System.Collections;
+using Pure.Primitives.Abstractions.Char;
 using Pure.Primitives.Abstractions.String;
 using Pure.Primitives.String;
-using System.Collections;
 
 namespace Pure.Primitives.Tests.String;
 
@@ -18,7 +18,9 @@ public sealed record NewLineStringTests
     public void EnumeratesAsTyped()
     {
         IEnumerable<IChar> stringPrimitive = new NewLineString();
-        Assert.True(Environment.NewLine.SequenceEqual(stringPrimitive.Select(x => x.CharValue)));
+        Assert.True(
+            Environment.NewLine.SequenceEqual(stringPrimitive.Select(x => x.CharValue))
+        );
     }
 
     [Fact]
@@ -26,7 +28,7 @@ public sealed record NewLineStringTests
     {
         IEnumerable stringPrimitive = new NewLineString();
 
-        ICollection<IChar> symbols = new List<IChar>();
+        ICollection<IChar> symbols = [];
 
         foreach (object symbol in stringPrimitive)
         {
@@ -39,12 +41,12 @@ public sealed record NewLineStringTests
     [Fact]
     public void ThrowExceptionOnGetHashCode()
     {
-        Assert.Throws<NotSupportedException>(() => new NewLineString().GetHashCode());
+        _ = Assert.Throws<NotSupportedException>(() => new NewLineString().GetHashCode());
     }
 
     [Fact]
     public void ThrowExceptionOnToString()
     {
-        Assert.Throws<NotSupportedException>(() => new NewLineString().ToString());
+        _ = Assert.Throws<NotSupportedException>(() => new NewLineString().ToString());
     }
 }

@@ -1,4 +1,4 @@
-﻿using Pure.Primitives.Abstractions.Number;
+using Pure.Primitives.Abstractions.Number;
 using Pure.Primitives.Number;
 
 namespace Pure.Primitives.Tests.Number;
@@ -15,12 +15,12 @@ public sealed record MinFloatTests
     [Fact]
     public void ThrowExceptionOnGetHashCode()
     {
-        Assert.Throws<NotSupportedException>(() => new MinFloat().GetHashCode());
+        _ = Assert.Throws<NotSupportedException>(() => new MinFloat().GetHashCode());
     }
 
     [Fact]
     public void ThrowExceptionOnToString()
     {
-        Assert.Throws<NotSupportedException>(() => new MinFloat().ToString());
+        _ = Assert.Throws<NotSupportedException>(() => new MinFloat().ToString());
     }
 }

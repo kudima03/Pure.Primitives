@@ -1,4 +1,4 @@
-﻿using Pure.Primitives.Abstractions.Number;
+using Pure.Primitives.Abstractions.Number;
 using Pure.Primitives.Number;
 
 namespace Pure.Primitives.Tests.Number;
@@ -43,12 +43,12 @@ public sealed record ZeroTests
     [Fact]
     public void ThrowExceptionOnGetHashCode()
     {
-        Assert.Throws<NotSupportedException>(() => new Zero<uint>().GetHashCode());
+        _ = Assert.Throws<NotSupportedException>(() => new Zero<uint>().GetHashCode());
     }
 
     [Fact]
     public void ThrowExceptionOnToString()
     {
-        Assert.Throws<NotSupportedException>(() => new Zero<long>().ToString());
+        _ = Assert.Throws<NotSupportedException>(() => new Zero<long>().ToString());
     }
 }

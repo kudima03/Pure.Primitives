@@ -1,4 +1,4 @@
-﻿using Pure.Primitives.Abstractions.DayOfWeek;
+using Pure.Primitives.Abstractions.DayOfWeek;
 using Pure.Primitives.DayOfWeek;
 
 namespace Pure.Primitives.Tests.DayOfWeek;
@@ -16,12 +16,12 @@ public sealed record ThursdayTests
     [Fact]
     public void ThrowExceptionOnGetHashCode()
     {
-        Assert.Throws<NotSupportedException>(() => new Thursday().GetHashCode());
+        _ = Assert.Throws<NotSupportedException>(() => new Thursday().GetHashCode());
     }
 
     [Fact]
     public void ThrowExceptionOnToString()
     {
-        Assert.Throws<NotSupportedException>(() => new Thursday().ToString());
+        _ = Assert.Throws<NotSupportedException>(() => new Thursday().ToString());
     }
 }
