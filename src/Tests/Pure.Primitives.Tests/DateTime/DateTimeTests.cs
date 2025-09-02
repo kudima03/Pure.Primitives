@@ -1,4 +1,4 @@
-﻿using Pure.Primitives.Abstractions.DateTime;
+using Pure.Primitives.Abstractions.DateTime;
 
 namespace Pure.Primitives.Tests.DateTime;
 
@@ -20,7 +20,11 @@ public sealed record DateTimeTests
         Assert.Equal(
             new System.DateTime(dateOnly, timeOnly),
             new System.DateTime(
-                new DateOnly(date.Year.NumberValue, date.Month.NumberValue, date.Day.NumberValue),
+                new DateOnly(
+                    date.Year.NumberValue,
+                    date.Month.NumberValue,
+                    date.Day.NumberValue
+                ),
                 new TimeOnly(
                     date.Hour.NumberValue,
                     date.Minute.NumberValue,
@@ -41,14 +45,18 @@ public sealed record DateTimeTests
 
         Assert.Equal(
             dateOnly,
-            new DateOnly(date.Year.NumberValue, date.Month.NumberValue, date.Day.NumberValue)
+            new DateOnly(
+                date.Year.NumberValue,
+                date.Month.NumberValue,
+                date.Day.NumberValue
+            )
         );
     }
 
     [Fact]
     public void ThrowExceptionOnGetHashCode()
     {
-        Assert.Throws<NotSupportedException>(() =>
+        _ = Assert.Throws<NotSupportedException>(() =>
             new DateTime(new Date(DateOnly.MaxValue)).GetHashCode()
         );
     }
@@ -56,7 +64,7 @@ public sealed record DateTimeTests
     [Fact]
     public void ThrowExceptionOnToString()
     {
-        Assert.Throws<NotSupportedException>(() =>
+        _ = Assert.Throws<NotSupportedException>(() =>
             new DateTime(new Date(DateOnly.MaxValue)).ToString()
         );
     }

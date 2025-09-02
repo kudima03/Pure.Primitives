@@ -1,7 +1,7 @@
-﻿using Pure.Primitives.Abstractions.Char;
+using System.Collections;
+using Pure.Primitives.Abstractions.Char;
 using Pure.Primitives.Abstractions.String;
 using Pure.Primitives.String;
-using System.Collections;
 
 namespace Pure.Primitives.Tests.String;
 
@@ -26,7 +26,7 @@ public sealed record WhitespaceStringTests
     {
         IEnumerable stringPrimitive = new WhitespaceString();
 
-        ICollection<IChar> symbols = new List<IChar>();
+        ICollection<IChar> symbols = [];
 
         foreach (object symbol in stringPrimitive)
         {
@@ -39,12 +39,14 @@ public sealed record WhitespaceStringTests
     [Fact]
     public void ThrowExceptionOnGetHashCode()
     {
-        Assert.Throws<NotSupportedException>(() => new WhitespaceString().GetHashCode());
+        _ = Assert.Throws<NotSupportedException>(() =>
+            new WhitespaceString().GetHashCode()
+        );
     }
 
     [Fact]
     public void ThrowExceptionOnToString()
     {
-        Assert.Throws<NotSupportedException>(() => new WhitespaceString().ToString());
+        _ = Assert.Throws<NotSupportedException>(() => new WhitespaceString().ToString());
     }
 }

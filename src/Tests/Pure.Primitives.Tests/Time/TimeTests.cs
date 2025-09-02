@@ -1,4 +1,4 @@
-﻿using Pure.Primitives.Abstractions.Time;
+using Pure.Primitives.Abstractions.Time;
 using Pure.Primitives.Number;
 
 namespace Pure.Primitives.Tests.Time;
@@ -12,12 +12,12 @@ public sealed record TimeTests
     {
         ITime time = new Time(new UShort(24), new UShort(10));
 
-        Assert.Throws<ArgumentException>(() => time.Hour);
-        Assert.Throws<ArgumentException>(() => time.Minute);
-        Assert.Throws<ArgumentException>(() => time.Second);
-        Assert.Throws<ArgumentException>(() => time.Millisecond);
-        Assert.Throws<ArgumentException>(() => time.Microsecond);
-        Assert.Throws<ArgumentException>(() => time.Nanosecond);
+        _ = Assert.Throws<ArgumentException>(() => time.Hour);
+        _ = Assert.Throws<ArgumentException>(() => time.Minute);
+        _ = Assert.Throws<ArgumentException>(() => time.Second);
+        _ = Assert.Throws<ArgumentException>(() => time.Millisecond);
+        _ = Assert.Throws<ArgumentException>(() => time.Microsecond);
+        _ = Assert.Throws<ArgumentException>(() => time.Nanosecond);
     }
 
     [Fact]
@@ -25,12 +25,12 @@ public sealed record TimeTests
     {
         ITime time = new Time(new UShort(23), new UShort(60));
 
-        Assert.Throws<ArgumentException>(() => time.Hour);
-        Assert.Throws<ArgumentException>(() => time.Minute);
-        Assert.Throws<ArgumentException>(() => time.Second);
-        Assert.Throws<ArgumentException>(() => time.Millisecond);
-        Assert.Throws<ArgumentException>(() => time.Microsecond);
-        Assert.Throws<ArgumentException>(() => time.Nanosecond);
+        _ = Assert.Throws<ArgumentException>(() => time.Hour);
+        _ = Assert.Throws<ArgumentException>(() => time.Minute);
+        _ = Assert.Throws<ArgumentException>(() => time.Second);
+        _ = Assert.Throws<ArgumentException>(() => time.Millisecond);
+        _ = Assert.Throws<ArgumentException>(() => time.Microsecond);
+        _ = Assert.Throws<ArgumentException>(() => time.Nanosecond);
     }
 
     [Fact]
@@ -38,25 +38,30 @@ public sealed record TimeTests
     {
         ITime time = new Time(new UShort(23), new UShort(59), new UShort(60));
 
-        Assert.Throws<ArgumentException>(() => time.Hour);
-        Assert.Throws<ArgumentException>(() => time.Minute);
-        Assert.Throws<ArgumentException>(() => time.Second);
-        Assert.Throws<ArgumentException>(() => time.Millisecond);
-        Assert.Throws<ArgumentException>(() => time.Microsecond);
-        Assert.Throws<ArgumentException>(() => time.Nanosecond);
+        _ = Assert.Throws<ArgumentException>(() => time.Hour);
+        _ = Assert.Throws<ArgumentException>(() => time.Minute);
+        _ = Assert.Throws<ArgumentException>(() => time.Second);
+        _ = Assert.Throws<ArgumentException>(() => time.Millisecond);
+        _ = Assert.Throws<ArgumentException>(() => time.Microsecond);
+        _ = Assert.Throws<ArgumentException>(() => time.Nanosecond);
     }
 
     [Fact]
     public void ThrowsExceptionOnInvalidMilliseconds()
     {
-        ITime time = new Time(new UShort(23), new UShort(59), new UShort(59), new UShort(1000));
+        ITime time = new Time(
+            new UShort(23),
+            new UShort(59),
+            new UShort(59),
+            new UShort(1000)
+        );
 
-        Assert.Throws<ArgumentException>(() => time.Hour);
-        Assert.Throws<ArgumentException>(() => time.Minute);
-        Assert.Throws<ArgumentException>(() => time.Second);
-        Assert.Throws<ArgumentException>(() => time.Millisecond);
-        Assert.Throws<ArgumentException>(() => time.Microsecond);
-        Assert.Throws<ArgumentException>(() => time.Nanosecond);
+        _ = Assert.Throws<ArgumentException>(() => time.Hour);
+        _ = Assert.Throws<ArgumentException>(() => time.Minute);
+        _ = Assert.Throws<ArgumentException>(() => time.Second);
+        _ = Assert.Throws<ArgumentException>(() => time.Millisecond);
+        _ = Assert.Throws<ArgumentException>(() => time.Microsecond);
+        _ = Assert.Throws<ArgumentException>(() => time.Nanosecond);
     }
 
     [Fact]
@@ -70,12 +75,12 @@ public sealed record TimeTests
             new UShort(1000)
         );
 
-        Assert.Throws<ArgumentException>(() => time.Hour);
-        Assert.Throws<ArgumentException>(() => time.Minute);
-        Assert.Throws<ArgumentException>(() => time.Second);
-        Assert.Throws<ArgumentException>(() => time.Millisecond);
-        Assert.Throws<ArgumentException>(() => time.Microsecond);
-        Assert.Throws<ArgumentException>(() => time.Nanosecond);
+        _ = Assert.Throws<ArgumentException>(() => time.Hour);
+        _ = Assert.Throws<ArgumentException>(() => time.Minute);
+        _ = Assert.Throws<ArgumentException>(() => time.Second);
+        _ = Assert.Throws<ArgumentException>(() => time.Millisecond);
+        _ = Assert.Throws<ArgumentException>(() => time.Microsecond);
+        _ = Assert.Throws<ArgumentException>(() => time.Nanosecond);
     }
 
     [Fact]
@@ -90,12 +95,12 @@ public sealed record TimeTests
             new UShort(1000)
         );
 
-        Assert.Throws<ArgumentException>(() => time.Hour);
-        Assert.Throws<ArgumentException>(() => time.Minute);
-        Assert.Throws<ArgumentException>(() => time.Second);
-        Assert.Throws<ArgumentException>(() => time.Millisecond);
-        Assert.Throws<ArgumentException>(() => time.Microsecond);
-        Assert.Throws<ArgumentException>(() => time.Nanosecond);
+        _ = Assert.Throws<ArgumentException>(() => time.Hour);
+        _ = Assert.Throws<ArgumentException>(() => time.Minute);
+        _ = Assert.Throws<ArgumentException>(() => time.Second);
+        _ = Assert.Throws<ArgumentException>(() => time.Millisecond);
+        _ = Assert.Throws<ArgumentException>(() => time.Microsecond);
+        _ = Assert.Throws<ArgumentException>(() => time.Nanosecond);
     }
 
     [Fact]
@@ -160,14 +165,18 @@ public sealed record TimeTests
 
         Assert.Equal(
             timeOnly,
-            new TimeOnly(time.Hour.NumberValue, time.Minute.NumberValue, time.Second.NumberValue)
+            new TimeOnly(
+                time.Hour.NumberValue,
+                time.Minute.NumberValue,
+                time.Second.NumberValue
+            )
         );
     }
 
     [Fact]
     public void ThrowExceptionOnGetHashCode()
     {
-        Assert.Throws<NotSupportedException>(() =>
+        _ = Assert.Throws<NotSupportedException>(() =>
             new Time(new UShort(1), new UShort(1), new UShort(2000)).GetHashCode()
         );
     }
@@ -175,7 +184,7 @@ public sealed record TimeTests
     [Fact]
     public void ThrowExceptionOnToString()
     {
-        Assert.Throws<NotSupportedException>(() =>
+        _ = Assert.Throws<NotSupportedException>(() =>
             new Time(new UShort(1), new UShort(1), new UShort(2000)).ToString()
         );
     }

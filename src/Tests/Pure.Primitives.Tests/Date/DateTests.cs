@@ -1,4 +1,4 @@
-﻿using Pure.Primitives.Abstractions.Date;
+using Pure.Primitives.Abstractions.Date;
 using Pure.Primitives.Number;
 
 namespace Pure.Primitives.Tests.Date;
@@ -11,27 +11,27 @@ public sealed record DateTests
     public void ThrowsExceptionOnInvalidDay()
     {
         IDate date = new Date(new MaxUshort(), new UShort(1), new UShort(2000));
-        Assert.Throws<ArgumentException>(() => date.Year);
-        Assert.Throws<ArgumentException>(() => date.Month);
-        Assert.Throws<ArgumentException>(() => date.Day);
+        _ = Assert.Throws<ArgumentException>(() => date.Year);
+        _ = Assert.Throws<ArgumentException>(() => date.Month);
+        _ = Assert.Throws<ArgumentException>(() => date.Day);
     }
 
     [Fact]
     public void ThrowsExceptionOnInvalidMonth()
     {
         IDate date = new Date(new UShort(1), new MaxUshort(), new UShort(2000));
-        Assert.Throws<ArgumentException>(() => date.Year);
-        Assert.Throws<ArgumentException>(() => date.Month);
-        Assert.Throws<ArgumentException>(() => date.Day);
+        _ = Assert.Throws<ArgumentException>(() => date.Year);
+        _ = Assert.Throws<ArgumentException>(() => date.Month);
+        _ = Assert.Throws<ArgumentException>(() => date.Day);
     }
 
     [Fact]
     public void ThrowsExceptionOnInvalidYear()
     {
         IDate date = new Date(new UShort(1), new UShort(1), new MaxUshort());
-        Assert.Throws<ArgumentException>(() => date.Year);
-        Assert.Throws<ArgumentException>(() => date.Month);
-        Assert.Throws<ArgumentException>(() => date.Day);
+        _ = Assert.Throws<ArgumentException>(() => date.Year);
+        _ = Assert.Throws<ArgumentException>(() => date.Month);
+        _ = Assert.Throws<ArgumentException>(() => date.Day);
     }
 
     [Fact]
@@ -43,7 +43,11 @@ public sealed record DateTests
 
         Assert.Equal(
             dateOnly,
-            new DateOnly(date.Year.NumberValue, date.Month.NumberValue, date.Day.NumberValue)
+            new DateOnly(
+                date.Year.NumberValue,
+                date.Month.NumberValue,
+                date.Day.NumberValue
+            )
         );
     }
 
@@ -60,14 +64,18 @@ public sealed record DateTests
 
         Assert.Equal(
             dateOnly,
-            new DateOnly(date.Year.NumberValue, date.Month.NumberValue, date.Day.NumberValue)
+            new DateOnly(
+                date.Year.NumberValue,
+                date.Month.NumberValue,
+                date.Day.NumberValue
+            )
         );
     }
 
     [Fact]
     public void ThrowExceptionOnGetHashCode()
     {
-        Assert.Throws<NotSupportedException>(() =>
+        _ = Assert.Throws<NotSupportedException>(() =>
             new Date(new UShort(1), new UShort(1), new UShort(2000)).GetHashCode()
         );
     }
@@ -75,7 +83,7 @@ public sealed record DateTests
     [Fact]
     public void ThrowExceptionOnToString()
     {
-        Assert.Throws<NotSupportedException>(() =>
+        _ = Assert.Throws<NotSupportedException>(() =>
             new Date(new UShort(1), new UShort(1), new UShort(2000)).ToString()
         );
     }

@@ -1,7 +1,7 @@
-﻿using Pure.Primitives.Abstractions.Number;
+using System;
+using Pure.Primitives.Abstractions.Number;
 using Pure.Primitives.Abstractions.Time;
 using Pure.Primitives.Number;
-using System;
 
 namespace Pure.Primitives.Time;
 

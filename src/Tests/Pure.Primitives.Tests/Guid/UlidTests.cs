@@ -1,4 +1,4 @@
-﻿using Pure.Primitives.Abstractions.Guid;
+using Pure.Primitives.Abstractions.Guid;
 using Pure.Primitives.Guid;
 
 namespace Pure.Primitives.Tests.Guid;
@@ -17,7 +17,9 @@ public sealed record UlidTests
     public void InitializeFromEmptyConstructor()
     {
         IGuid guidPrimitive = new Ulid();
-        Assert.True(System.Guid.TryParse(guidPrimitive.GuidValue.ToString(), out System.Guid _));
+        Assert.True(
+            System.Guid.TryParse(guidPrimitive.GuidValue.ToString(), out System.Guid _)
+        );
     }
 
     [Fact]
@@ -35,7 +37,9 @@ public sealed record UlidTests
         Assert.True(
             values
                 .Select(x => x.orderNumber)
-                .SequenceEqual(values.OrderBy(x => x.ulid.GuidValue).Select(x => x.orderNumber))
+                .SequenceEqual(
+                    values.OrderBy(x => x.ulid.GuidValue).Select(x => x.orderNumber)
+                )
         );
     }
 
@@ -49,12 +53,12 @@ public sealed record UlidTests
     [Fact]
     public void ThrowExceptionOnGetHashCode()
     {
-        Assert.Throws<NotSupportedException>(() => new Ulid().GetHashCode());
+        _ = Assert.Throws<NotSupportedException>(() => new Ulid().GetHashCode());
     }
 
     [Fact]
     public void ThrowExceptionOnToString()
     {
-        Assert.Throws<NotSupportedException>(() => new Ulid().ToString());
+        _ = Assert.Throws<NotSupportedException>(() => new Ulid().ToString());
     }
 }

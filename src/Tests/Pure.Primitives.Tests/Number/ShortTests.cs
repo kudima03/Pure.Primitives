@@ -1,4 +1,4 @@
-﻿using Pure.Primitives.Abstractions.Number;
+using Pure.Primitives.Abstractions.Number;
 using Pure.Primitives.Number;
 
 namespace Pure.Primitives.Tests.Number;
@@ -16,12 +16,14 @@ public sealed record ShortTests
     [Fact]
     public void ThrowExceptionOnGetHashCode()
     {
-        Assert.Throws<NotSupportedException>(() => new Short(8789).GetHashCode());
+        _ = Assert.Throws<NotSupportedException>(() => new Short(8789).GetHashCode());
     }
 
     [Fact]
     public void ThrowExceptionOnToString()
     {
-        Assert.Throws<NotSupportedException>(() => new Short(short.MinValue).ToString());
+        _ = Assert.Throws<NotSupportedException>(() =>
+            new Short(short.MinValue).ToString()
+        );
     }
 }

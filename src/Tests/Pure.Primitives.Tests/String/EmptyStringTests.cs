@@ -1,7 +1,7 @@
-﻿using Pure.Primitives.Abstractions.Char;
+using System.Collections;
+using Pure.Primitives.Abstractions.Char;
 using Pure.Primitives.Abstractions.String;
 using Pure.Primitives.String;
-using System.Collections;
 
 namespace Pure.Primitives.Tests.String;
 
@@ -26,7 +26,7 @@ public sealed record EmptyStringTests
     {
         IEnumerable stringPrimitive = new EmptyString();
 
-        ICollection<IChar> symbols = new List<IChar>();
+        ICollection<IChar> symbols = [];
 
         foreach (object symbol in stringPrimitive)
         {
@@ -39,12 +39,12 @@ public sealed record EmptyStringTests
     [Fact]
     public void ThrowExceptionOnGetHashCode()
     {
-        Assert.Throws<NotSupportedException>(() => new EmptyString().GetHashCode());
+        _ = Assert.Throws<NotSupportedException>(() => new EmptyString().GetHashCode());
     }
 
     [Fact]
     public void ThrowExceptionOnToString()
     {
-        Assert.Throws<NotSupportedException>(() => new EmptyString().ToString());
+        _ = Assert.Throws<NotSupportedException>(() => new EmptyString().ToString());
     }
 }

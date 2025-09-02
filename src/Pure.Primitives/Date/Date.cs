@@ -1,8 +1,8 @@
-﻿using Pure.Primitives.Abstractions.Bool;
+using System;
+using Pure.Primitives.Abstractions.Bool;
 using Pure.Primitives.Abstractions.Date;
 using Pure.Primitives.Abstractions.Number;
 using Pure.Primitives.Number;
-using System;
 
 namespace Pure.Primitives.Date;
 

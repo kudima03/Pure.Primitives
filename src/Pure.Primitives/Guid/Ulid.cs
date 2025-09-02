@@ -1,5 +1,5 @@
-﻿using Pure.Primitives.Abstractions.Guid;
 using System;
+using Pure.Primitives.Abstractions.Guid;
 
 namespace Pure.Primitives.Guid;
 

@@ -1,4 +1,4 @@
-﻿using Pure.Primitives.Abstractions.Guid;
+using Pure.Primitives.Abstractions.Guid;
 using Pure.Primitives.Guid;
 
 namespace Pure.Primitives.Tests.Guid;
@@ -15,12 +15,12 @@ public sealed record EmptyGuidTests
     [Fact]
     public void ThrowExceptionOnGetHashCode()
     {
-        Assert.Throws<NotSupportedException>(() => new EmptyGuid().GetHashCode());
+        _ = Assert.Throws<NotSupportedException>(() => new EmptyGuid().GetHashCode());
     }
 
     [Fact]
     public void ThrowExceptionOnToString()
     {
-        Assert.Throws<NotSupportedException>(() => new EmptyGuid().ToString());
+        _ = Assert.Throws<NotSupportedException>(() => new EmptyGuid().ToString());
     }
 }
