@@ -39,9 +39,7 @@ public sealed record DotStringTests
     [Fact]
     public void ThrowExceptionOnGetHashCode()
     {
-        _ = Assert.Throws<NotSupportedException>(() =>
-            new DotString().GetHashCode()
-        );
+        _ = Assert.Throws<NotSupportedException>(() => new DotString().GetHashCode());
     }
 
     [Fact]
