@@ -74,11 +74,59 @@ public sealed record StringTests
     }
 
     [Fact]
-    public void InitializeFromDayOfWeek()
+    public void InitializeFromMonday()
     {
         IDayOfWeek value = new Monday();
         IString parsed = new String(value);
         Assert.Equal("Monday", parsed.TextValue);
+    }
+
+    [Fact]
+    public void InitializeFromTuesday()
+    {
+        IDayOfWeek value = new Tuesday();
+        IString parsed = new String(value);
+        Assert.Equal("Tuesday", parsed.TextValue);
+    }
+
+    [Fact]
+    public void InitializeFromWednesday()
+    {
+        IDayOfWeek value = new Wednesday();
+        IString parsed = new String(value);
+        Assert.Equal("Wednesday", parsed.TextValue);
+    }
+
+    [Fact]
+    public void InitializeFromThursday()
+    {
+        IDayOfWeek value = new Thursday();
+        IString parsed = new String(value);
+        Assert.Equal("Thursday", parsed.TextValue);
+    }
+
+    [Fact]
+    public void InitializeFromFriday()
+    {
+        IDayOfWeek value = new Friday();
+        IString parsed = new String(value);
+        Assert.Equal("Friday", parsed.TextValue);
+    }
+
+    [Fact]
+    public void InitializeFromSaturday()
+    {
+        IDayOfWeek value = new Saturday();
+        IString parsed = new String(value);
+        Assert.Equal("Saturday", parsed.TextValue);
+    }
+
+    [Fact]
+    public void InitializeFromSunday()
+    {
+        IDayOfWeek value = new Sunday();
+        IString parsed = new String(value);
+        Assert.Equal("Sunday", parsed.TextValue);
     }
 
     [Fact]
