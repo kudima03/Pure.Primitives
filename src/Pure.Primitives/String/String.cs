@@ -61,6 +61,7 @@ public sealed record String : IString
                     5 => "Friday",
                     6 => "Saturday",
                     7 => "Sunday",
+                    // stryker disable once String
                     _ => throw new ArgumentException($"{nameof(IDayOfWeek.DayNumberValue)} is out of range."),
                 }
             )
