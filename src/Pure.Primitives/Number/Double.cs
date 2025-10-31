@@ -1,4 +1,3 @@
-using System;
 using Pure.Primitives.Abstractions.Number;
 
 namespace Pure.Primitives.Number;
@@ -39,7 +38,7 @@ public sealed record Double : INumber<double>
         _lazyValue = lazyValue;
     }
 
-    double INumber<double>.NumberValue => _lazyValue.Value;
+    public double NumberValue => _lazyValue.Value;
 
     public override int GetHashCode()
     {

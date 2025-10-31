@@ -1,11 +1,10 @@
-using System;
 using Pure.Primitives.Abstractions.Number;
 
 namespace Pure.Primitives.Number;
 
 public sealed record MinShort : INumber<short>
 {
-    short INumber<short>.NumberValue => short.MinValue;
+    public short NumberValue => short.MinValue;
 
     public override int GetHashCode()
     {

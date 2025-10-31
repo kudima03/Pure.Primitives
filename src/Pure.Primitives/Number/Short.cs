@@ -1,18 +1,15 @@
-using System;
 using Pure.Primitives.Abstractions.Number;
 
 namespace Pure.Primitives.Number;
 
 public sealed record Short : INumber<short>
 {
-    private readonly short _value;
-
     public Short(short value)
     {
-        _value = value;
+        NumberValue = value;
     }
 
-    short INumber<short>.NumberValue => _value;
+    public short NumberValue { get; }
 
     public override int GetHashCode()
     {

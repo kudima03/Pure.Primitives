@@ -1,8 +1,5 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using Pure.Primitives.Abstractions.Bool;
 using Pure.Primitives.Abstractions.Char;
 using Pure.Primitives.Abstractions.Date;
@@ -62,7 +59,9 @@ public sealed record String : IString
                     6 => "Saturday",
                     7 => "Sunday",
                     // stryker disable once String
-                    _ => throw new ArgumentException($"{nameof(IDayOfWeek.DayNumberValue)} is out of range."),
+                    _ => throw new ArgumentException(
+                        $"{nameof(IDayOfWeek.DayNumberValue)} is out of range."
+                    ),
                 }
             )
         )
@@ -151,7 +150,7 @@ public sealed record String : IString
         _lazyValue = lazyValue;
     }
 
-    string IString.TextValue => _lazyValue.Value;
+    public string TextValue => _lazyValue.Value;
 
     public IEnumerator<IChar> GetEnumerator()
     {

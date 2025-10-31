@@ -1,11 +1,10 @@
-using System;
 using Pure.Primitives.Abstractions.Number;
 
 namespace Pure.Primitives.Number;
 
 public sealed record MaxDouble : INumber<double>
 {
-    double INumber<double>.NumberValue => double.MaxValue;
+    public double NumberValue => double.MaxValue;
 
     public override int GetHashCode()
     {

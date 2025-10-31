@@ -1,11 +1,10 @@
-using System;
 using Pure.Primitives.Abstractions.Bool;
 
 namespace Pure.Primitives.Bool;
 
 public sealed record False : IBool
 {
-    bool IBool.BoolValue => false;
+    public bool BoolValue => false;
 
     public override int GetHashCode()
     {

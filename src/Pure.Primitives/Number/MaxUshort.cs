@@ -1,11 +1,10 @@
-using System;
 using Pure.Primitives.Abstractions.Number;
 
 namespace Pure.Primitives.Number;
 
 public sealed record MaxUshort : INumber<ushort>
 {
-    ushort INumber<ushort>.NumberValue => ushort.MaxValue;
+    public ushort NumberValue => ushort.MaxValue;
 
     public override int GetHashCode()
     {
