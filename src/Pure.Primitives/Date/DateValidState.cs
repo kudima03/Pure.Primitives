@@ -1,4 +1,3 @@
-using System;
 using Pure.Primitives.Abstractions.Bool;
 using Pure.Primitives.Abstractions.Number;
 
