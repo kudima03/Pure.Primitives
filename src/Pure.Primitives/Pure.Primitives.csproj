@@ -10,7 +10,7 @@
     <InternalsVisibleTo Include="Pure.Primitives.Tests" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.ILLink.Tasks" Version="9.0.9" />
+    <PackageReference Include="Microsoft.NET.ILLink.Tasks" Version="9.0.10" />
     <PackageReference Include="Pure.Primitives.Abstractions" Version="4.0.11" />
   </ItemGroup>
   <PropertyGroup>
