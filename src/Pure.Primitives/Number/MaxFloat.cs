@@ -5,7 +5,7 @@ namespace Pure.Primitives.Number;
 
 public sealed record MaxFloat : INumber<float>
 {
-    float INumber<float>.NumberValue => float.MaxValue;
+    public float NumberValue => float.MaxValue;
 
     public override int GetHashCode()
     {

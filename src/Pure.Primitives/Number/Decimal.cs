@@ -33,7 +33,7 @@ public sealed record Decimal : INumber<decimal>
         _lazyValue = lazyValue;
     }
 
-    decimal INumber<decimal>.NumberValue => _lazyValue.Value;
+    public decimal NumberValue => _lazyValue.Value;
 
     public override int GetHashCode()
     {

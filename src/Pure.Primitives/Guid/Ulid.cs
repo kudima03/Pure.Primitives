@@ -5,17 +5,15 @@ namespace Pure.Primitives.Guid;
 
 public sealed record Ulid : IGuid
 {
-    private readonly System.Guid _value;
-
     public Ulid()
         : this(System.Guid.CreateVersion7()) { }
 
     public Ulid(System.Guid value)
     {
-        _value = value;
+        GuidValue = value;
     }
 
-    System.Guid IGuid.GuidValue => _value;
+    public System.Guid GuidValue { get; }
 
     public override int GetHashCode()
     {

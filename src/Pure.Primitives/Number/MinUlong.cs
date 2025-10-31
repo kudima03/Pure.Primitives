@@ -5,7 +5,7 @@ namespace Pure.Primitives.Number;
 
 public sealed record MinUlong : INumber<ulong>
 {
-    ulong INumber<ulong>.NumberValue => ulong.MinValue;
+    public ulong NumberValue => ulong.MinValue;
 
     public override int GetHashCode()
     {

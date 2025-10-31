@@ -47,6 +47,8 @@ public sealed record RightRoundBracketStringTests
     [Fact]
     public void ThrowExceptionOnToString()
     {
-        _ = Assert.Throws<NotSupportedException>(() => new RightRoundBracketString().ToString());
+        _ = Assert.Throws<NotSupportedException>(() =>
+            new RightRoundBracketString().ToString()
+        );
     }
 }

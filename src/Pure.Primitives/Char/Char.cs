@@ -5,14 +5,12 @@ namespace Pure.Primitives.Char;
 
 public sealed record Char : IChar
 {
-    private readonly char _value;
-
     public Char(char value)
     {
-        _value = value;
+        CharValue = value;
     }
 
-    char IChar.CharValue => _value;
+    public char CharValue { get; }
 
     public override int GetHashCode()
     {

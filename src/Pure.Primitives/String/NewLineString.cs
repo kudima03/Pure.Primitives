@@ -9,13 +9,11 @@ namespace Pure.Primitives.String;
 
 public sealed record NewLineString : IString
 {
-    private readonly string _value = Environment.NewLine;
-
-    string IString.TextValue => _value;
+    public string TextValue => Environment.NewLine;
 
     public IEnumerator<IChar> GetEnumerator()
     {
-        return _value.Select(symbol => new Char.Char(symbol)).GetEnumerator();
+        return TextValue.Select(symbol => new Char.Char(symbol)).GetEnumerator();
     }
 
     public override int GetHashCode()

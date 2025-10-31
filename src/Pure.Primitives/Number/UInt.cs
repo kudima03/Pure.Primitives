@@ -18,7 +18,7 @@ public sealed record UInt : INumber<uint>
         _lazyValue = lazyValue;
     }
 
-    uint INumber<uint>.NumberValue => _lazyValue.Value;
+    public uint NumberValue => _lazyValue.Value;
 
     public override int GetHashCode()
     {

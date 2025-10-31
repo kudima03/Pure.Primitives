@@ -11,13 +11,11 @@ using Char = Char.Char;
 
 public sealed record DotString : IString
 {
-    private const string Value = ".";
-
-    string IString.TextValue => Value;
+    public string TextValue => ".";
 
     public IEnumerator<IChar> GetEnumerator()
     {
-        return Value.Select(symbol => new Char(symbol)).GetEnumerator();
+        return TextValue.Select(symbol => new Char(symbol)).GetEnumerator();
     }
 
     public override int GetHashCode()

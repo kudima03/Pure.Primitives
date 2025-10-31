@@ -27,7 +27,7 @@ public sealed record Long : INumber<long>
         _lazyValue = lazyValue;
     }
 
-    long INumber<long>.NumberValue => _lazyValue.Value;
+    public long NumberValue => _lazyValue.Value;
 
     public override int GetHashCode()
     {
