@@ -5,7 +5,7 @@ namespace Pure.Primitives.Guid;
 public sealed record Ulid : IGuid
 {
     public Ulid()
-        : this(System.Guid.CreateVersion7()) { }
+        : this(ByteAether.Ulid.Ulid.New()) { }
 
     public Ulid(System.Guid value)
     {
