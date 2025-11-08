@@ -38,4 +38,4 @@ jobs:
             9.x.x
 
       - name: Build NativeAOT ${{ matrix.runtime }} with .NET ${{ matrix.dotnet }}
-        run: dotnet publish --framework net${{ matrix.dotnet }} --runtime ${{ matrix.runtime }} -c Release -warnaserror
+        run: dotnet publish --framework net${{ matrix.dotnet }} --runtime ${{ matrix.runtime }} --self-contained --configuration Release -warnaserror
