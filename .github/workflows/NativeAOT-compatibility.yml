@@ -14,7 +14,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        dotnet: [ '7.0', '8.0', '9.0' ]
+        dotnet: [ '7.0', '8.0', '9.0', '10.0' ]
         runtime: [
           'linux-x64',
           'linux-arm64',
@@ -32,7 +32,7 @@ jobs:
       - name: Setup .NET SDK ${{ matrix.dotnet }}
         uses: actions/setup-dotnet@v5
         with:
-          dotnet-version: ${{ matrix.dotnet }}
+          dotnet-version: 10.x.x
 
       - name: Build NativeAOT ${{ matrix.runtime }} with .NET ${{ matrix.dotnet }}
         run: dotnet publish --framework net${{ matrix.dotnet }} --runtime ${{ matrix.runtime }} --self-contained --configuration Release -warnaserror
