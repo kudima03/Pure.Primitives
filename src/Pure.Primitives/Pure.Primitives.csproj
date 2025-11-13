@@ -4,6 +4,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsAotCompatible>true</IsAotCompatible>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <InternalsVisibleTo Include="Pure.Primitives.Tests" />
