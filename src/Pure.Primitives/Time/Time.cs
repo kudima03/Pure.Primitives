@@ -8,18 +8,6 @@ public sealed record Time : ITime
 {
     private readonly TimeValidState _validState;
 
-    private readonly INumber<ushort> _hour;
-
-    private readonly INumber<ushort> _minute;
-
-    private readonly INumber<ushort> _second;
-
-    private readonly INumber<ushort> _millisecond;
-
-    private readonly INumber<ushort> _microsecond;
-
-    private readonly INumber<ushort> _nanosecond;
-
     public Time(TimeOnly timeOnly)
         : this(
             new UShort((ushort)timeOnly.Hour),
@@ -63,12 +51,12 @@ public sealed record Time : ITime
         INumber<ushort> nanosecond
     )
     {
-        _hour = hour;
-        _minute = minute;
-        _second = second;
-        _millisecond = millisecond;
-        _microsecond = microsecond;
-        _nanosecond = nanosecond;
+        Hour = hour;
+        Minute = minute;
+        Second = second;
+        Millisecond = millisecond;
+        Microsecond = microsecond;
+        Nanosecond = nanosecond;
         _validState = new TimeValidState(
             hour,
             minute,
@@ -82,37 +70,37 @@ public sealed record Time : ITime
     // Stryker disable once String
     public INumber<ushort> Hour =>
         _validState.BoolValue
-            ? _hour
+            ? field
             : throw new ArgumentException($"{nameof(Hour)} field is not valid.");
 
     // Stryker disable once String
     public INumber<ushort> Minute =>
         _validState.BoolValue
-            ? _minute
+            ? field
             : throw new ArgumentException($"{nameof(Minute)} field is not valid.");
 
     // Stryker disable once String
     public INumber<ushort> Second =>
         _validState.BoolValue
-            ? _second
+            ? field
             : throw new ArgumentException($"{nameof(Second)} field is not valid.");
 
     // Stryker disable once String
     public INumber<ushort> Millisecond =>
         _validState.BoolValue
-            ? _millisecond
+            ? field
             : throw new ArgumentException($"{nameof(Millisecond)} field is not valid.");
 
     // Stryker disable once String
     public INumber<ushort> Microsecond =>
         _validState.BoolValue
-            ? _microsecond
+            ? field
             : throw new ArgumentException($"{nameof(Microsecond)} field is not valid.");
 
     // Stryker disable once String
     public INumber<ushort> Nanosecond =>
         _validState.BoolValue
-            ? _nanosecond
+            ? field
             : throw new ArgumentException($"{nameof(Nanosecond)} field is not valid.");
 
     public override int GetHashCode()
