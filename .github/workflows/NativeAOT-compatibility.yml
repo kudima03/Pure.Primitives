@@ -32,7 +32,7 @@ jobs:
       - name: Setup .NET SDK ${{ matrix.dotnet }}
         uses: actions/setup-dotnet@v5
         with:
-          dotnet-version: ${{ matrix.dotnet }}
+          dotnet-version: 10.x.x
 
       - name: Build NativeAOT ${{ matrix.runtime }} with .NET ${{ matrix.dotnet }}
         run: dotnet publish --framework net${{ matrix.dotnet }} --runtime ${{ matrix.runtime }} --self-contained --configuration Release -warnaserror
