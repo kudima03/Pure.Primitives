@@ -33,7 +33,7 @@ public sealed record String : IString
     public String(IDateTime value)
         : this(
             new Lazy<string>(() =>
-                $"{value.Month.NumberValue}/{value.Day.NumberValue}/{value.Year.NumberValue} {value.Hour.NumberValue}:{value.Minute.NumberValue}:{value.Second.NumberValue}.{value.Millisecond.NumberValue}.{value.Nanosecond.NumberValue}"
+                $"{value.Month.NumberValue}/{value.Day.NumberValue}/{value.Year.NumberValue} {value.Hour.NumberValue}:{value.Minute.NumberValue}:{value.Second.NumberValue}.{value.Millisecond.NumberValue}.{value.Microsecond.NumberValue}"
             )
         )
     { }
@@ -41,7 +41,7 @@ public sealed record String : IString
     public String(ITime value)
         : this(
             new Lazy<string>(() =>
-                $"{value.Hour.NumberValue}:{value.Minute.NumberValue}:{value.Second.NumberValue}.{value.Millisecond.NumberValue}.{value.Nanosecond.NumberValue}"
+                $"{value.Hour.NumberValue}:{value.Minute.NumberValue}:{value.Second.NumberValue}.{value.Millisecond.NumberValue}.{value.Microsecond.NumberValue}"
             )
         )
     { }
