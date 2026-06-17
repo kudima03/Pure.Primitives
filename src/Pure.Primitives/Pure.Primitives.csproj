@@ -6,7 +6,7 @@
     <IsAotCompatible>true</IsAotCompatible>
     <LangVersion>latest</LangVersion>
     <EnablePackageValidation>true</EnablePackageValidation>
-    <PackageValidationBaselineVersion>3.6.4</PackageValidationBaselineVersion>
+    <PackageValidationBaselineVersion>3.6.5</PackageValidationBaselineVersion>
   </PropertyGroup>
   <ItemGroup>
     <InternalsVisibleTo Include="Pure.Primitives.Tests" />
