@@ -57,7 +57,7 @@ public sealed record StringTests
         IDateTime value = new RandomDateTime();
         IString parsed = new String(value);
         Assert.Equal(
-            $"{value.Month.NumberValue}/{value.Day.NumberValue}/{value.Year.NumberValue} {value.Hour.NumberValue}:{value.Minute.NumberValue}:{value.Second.NumberValue}.{value.Millisecond.NumberValue}.{value.Nanosecond.NumberValue}",
+            $"{value.Month.NumberValue}/{value.Day.NumberValue}/{value.Year.NumberValue} {value.Hour.NumberValue}:{value.Minute.NumberValue}:{value.Second.NumberValue}.{value.Millisecond.NumberValue}.{value.Microsecond.NumberValue}",
             parsed.TextValue
         );
     }
@@ -68,7 +68,7 @@ public sealed record StringTests
         ITime value = new RandomTime();
         IString parsed = new String(value);
         Assert.Equal(
-            $"{value.Hour.NumberValue}:{value.Minute.NumberValue}:{value.Second.NumberValue}.{value.Millisecond.NumberValue}.{value.Nanosecond.NumberValue}",
+            $"{value.Hour.NumberValue}:{value.Minute.NumberValue}:{value.Second.NumberValue}.{value.Millisecond.NumberValue}.{value.Microsecond.NumberValue}",
             parsed.TextValue
         );
     }
