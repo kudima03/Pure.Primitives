@@ -57,7 +57,7 @@ jobs:
         thresholds: "98 98"
     - name: Add Coverage PR Comment
       uses: marocchino/sticky-pull-request-comment@v3
-      if: github.event_name == 'pull_request' && github.event.pull_request.user.login != 'dependabot[bot]'
+      continue-on-error: true
       with:
         recreate: true
         path: code-coverage-results.md
