@@ -12,7 +12,7 @@
     <InternalsVisibleTo Include="Pure.Primitives.Tests" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="ByteAether.Ulid" Version="1.3.7" />
+    <PackageReference Include="ByteAether.Ulid" Version="1.4.0" />
     <PackageReference Include="Pure.Primitives.Abstractions" Version="4.3.0" />
   </ItemGroup>
   <PropertyGroup>
