@@ -12,7 +12,7 @@ dotnet build --no-restore -warnaserror
 dotnet format --verify-no-changes             # check code style (CI enforces this)
 dotnet format && csharpier format .           # auto-fix code style
 dotnet test --no-build                        # run xUnit tests (requires prior build)
-dotnet pack --configuration Release -p:PackageVersion=<version> --output .
+dotnet pack --configuration Release -p:Version=<version> --output .
 ```
 
 The test project targets `net10.0` only. Code coverage is collected by `coverlet`; CI enforces a minimum of 98% line and branch coverage.
