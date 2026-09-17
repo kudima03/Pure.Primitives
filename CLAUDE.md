@@ -15,6 +15,8 @@ dotnet test --no-build                        # run xUnit tests (requires prior 
 dotnet pack --configuration Release -p:Version=<version> --output .
 ```
 
+CI additionally passes `-p:AssemblyVersion` (pinned to the major) and `-p:FileVersion`; see `.github/workflows/publish-nuget.yml`.
+
 The test project targets `net10.0` only. Code coverage is collected by `coverlet`; CI enforces a minimum of 98% line and branch coverage.
 
 ## Architecture
