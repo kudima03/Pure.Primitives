@@ -6,6 +6,15 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [3.7.0] — 2026-10-20
+
+### Added
+- Named punctuation string constants in `Pure.Primitives.String`: `HashString`, `AtString`, `UnderscoreString`, `HyphenString`, `SlashString`, `BackslashString`, `AsteriskString`, `EqualsSignString`, `AmpersandString`, `QuestionMarkString`, `ExclamationMarkString`, `PercentString`, `PlusString`, `TildeString`, `PipeString`, `LessThanString` and `GreaterThanString`.
+
+### Changed
+- The NuGet package now includes the project README.
+- Updated the `ByteAether.Ulid` dependency to 1.4.2.
+
 ## [3.6.5] — 2026-06-17
 
 ### Fixed
