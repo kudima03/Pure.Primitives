@@ -119,6 +119,7 @@ Concrete implementations of immutable, composable primitive types for the **Pure
 - .NET 8
 - .NET 9
 - .NET 10
+- .NET 11
 
 ## Installation
 
