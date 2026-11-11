@@ -13,7 +13,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="ByteAether.Ulid" Version="1.4.2" />
-    <PackageReference Include="Pure.Primitives.Abstractions" Version="4.3.0" />
+    <PackageReference Include="Pure.Primitives.Abstractions" Version="4.4.0" />
   </ItemGroup>
   <PropertyGroup>
     <PackageId>Pure.Primitives</PackageId>
