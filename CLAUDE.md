@@ -17,7 +17,7 @@ dotnet pack --configuration Release -p:Version=<version> --output .
 
 CI additionally passes `-p:AssemblyVersion` (pinned to the major) and `-p:FileVersion`; see `.github/workflows/publish-nuget.yml`.
 
-The test project targets `net10.0` only. Code coverage is collected by `coverlet`; CI enforces a minimum of 98% line and branch coverage.
+The test project targets `net11.0` only. Code coverage is collected by `coverlet`; CI enforces a minimum of 98% line and branch coverage.
 
 ## Architecture
 
@@ -38,7 +38,7 @@ This is an **implementation NuGet library** — concrete `sealed record` types t
 
 **Composition:** constructors accept other Pure interfaces (e.g., `String(IDate)`, `Int(INumber<ushort>)`), so values can be composed without unwrapping to raw .NET types.
 
-**Multi-targeting:** net7.0, net8.0, net9.0, net10.0. `IsAotCompatible = true` — no reflection or dynamic code.
+**Multi-targeting:** net7.0, net8.0, net9.0, net10.0, net11.0. `IsAotCompatible = true` — no reflection or dynamic code.
 
 **Publishing:** triggered by pushing a semver tag (`*.*.*`). The tag value becomes `PackageVersion`. Packages are pushed to both GitHub Packages and NuGet.org (requires `NUGET_API_KEY` secret).
 
